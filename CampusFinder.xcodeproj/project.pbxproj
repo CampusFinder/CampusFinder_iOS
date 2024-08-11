@@ -23,6 +23,14 @@
 		01E408E62C6785590006B86F /* CFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E52C6785590006B86F /* CFButton.swift */; };
 		01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E72C67867F0006B86F /* LoginViewModel.swift */; };
 		01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EB2C68788B0006B86F /* TermsViewController.swift */; };
+		01E408EE2C688B910006B86F /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408ED2C688B910006B86F /* TermsView.swift */; };
+		01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EF2C688BAE0006B86F /* TermsViewModel.swift */; };
+		01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F32C68939B0006B86F /* SelectPositionViewController.swift */; };
+		01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F52C68940D0006B86F /* SelectPositionView.swift */; };
+		01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */; };
+		01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */; };
+		01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */; };
+		01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,14 @@
 		01E408E52C6785590006B86F /* CFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFButton.swift; sourceTree = "<group>"; };
 		01E408E72C67867F0006B86F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		01E408EB2C68788B0006B86F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		01E408ED2C688B910006B86F /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		01E408EF2C688BAE0006B86F /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
+		01E408F32C68939B0006B86F /* SelectPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionViewController.swift; sourceTree = "<group>"; };
+		01E408F52C68940D0006B86F /* SelectPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionView.swift; sourceTree = "<group>"; };
+		01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionViewModel.swift; sourceTree = "<group>"; };
+		01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewController.swift; sourceTree = "<group>"; };
+		01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewModel.swift; sourceTree = "<group>"; };
+		01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				01E408F12C68937A0006B86F /* Home */,
 				01E408952C633E4B0006B86F /* Onboarding */,
 				01E408942C633E420006B86F /* Base */,
 			);
@@ -117,6 +134,8 @@
 		01E408952C633E4B0006B86F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				01E408F92C6898190006B86F /* PhoneNumberCertify */,
+				01E408F22C6893860006B86F /* SelectPosition */,
 				01E408EA2C68786E0006B86F /* Terms */,
 				01E408E92C678F850006B86F /* Login */,
 			);
@@ -145,8 +164,37 @@
 			isa = PBXGroup;
 			children = (
 				01E408EB2C68788B0006B86F /* TermsViewController.swift */,
+				01E408EF2C688BAE0006B86F /* TermsViewModel.swift */,
+				01E408ED2C688B910006B86F /* TermsView.swift */,
 			);
 			path = Terms;
+			sourceTree = "<group>";
+		};
+		01E408F12C68937A0006B86F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		01E408F22C6893860006B86F /* SelectPosition */ = {
+			isa = PBXGroup;
+			children = (
+				01E408F32C68939B0006B86F /* SelectPositionViewController.swift */,
+				01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */,
+				01E408F52C68940D0006B86F /* SelectPositionView.swift */,
+			);
+			path = SelectPosition;
+			sourceTree = "<group>";
+		};
+		01E408F92C6898190006B86F /* PhoneNumberCertify */ = {
+			isa = PBXGroup;
+			children = (
+				01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */,
+				01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */,
+				01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */,
+			);
+			path = PhoneNumberCertify;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,12 +280,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
+				01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
+				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
+				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
+				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
+				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
+				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
+				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
+				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
 				01E408E62C6785590006B86F /* CFButton.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
 			);
