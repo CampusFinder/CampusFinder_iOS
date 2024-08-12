@@ -31,6 +31,11 @@
 		01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */; };
 		01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */; };
 		01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */; };
+		01E409012C68DB980006B86F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409002C68DB980006B86F /* HomeViewController.swift */; };
+		01E409032C68DE3D0006B86F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409022C68DE3D0006B86F /* HomeView.swift */; };
+		01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090B2C69F8BE0006B86F /* CFSearchView.swift */; };
+		01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */; };
+		01E409122C6A08950006B86F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409112C6A08950006B86F /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewController.swift; sourceTree = "<group>"; };
 		01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewModel.swift; sourceTree = "<group>"; };
 		01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyView.swift; sourceTree = "<group>"; };
+		01E409002C68DB980006B86F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		01E409022C68DE3D0006B86F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		01E4090B2C69F8BE0006B86F /* CFSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSearchView.swift; sourceTree = "<group>"; };
+		01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
+		01E409112C6A08950006B86F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 		01E408682C633C0E0006B86F /* CampusFinder */ = {
 			isa = PBXGroup;
 			children = (
+				01E409102C6A086F0006B86F /* Extension */,
 				01E408E42C6785420006B86F /* Util */,
 				01E4088C2C633DA60006B86F /* Application */,
 				01E408912C633E2C0006B86F /* Presentation */,
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				01E408E52C6785590006B86F /* CFButton.swift */,
+				01E4090B2C69F8BE0006B86F /* CFSearchView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -173,6 +185,9 @@
 		01E408F12C68937A0006B86F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				01E409002C68DB980006B86F /* HomeViewController.swift */,
+				01E409022C68DE3D0006B86F /* HomeView.swift */,
+				01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -195,6 +210,14 @@
 				01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */,
 			);
 			path = PhoneNumberCertify;
+			sourceTree = "<group>";
+		};
+		01E409102C6A086F0006B86F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				01E409112C6A08950006B86F /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,18 +307,23 @@
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
 				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
+				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
+				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
+				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
+				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
 				01E408E62C6785590006B86F /* CFButton.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
+				01E409032C68DE3D0006B86F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
