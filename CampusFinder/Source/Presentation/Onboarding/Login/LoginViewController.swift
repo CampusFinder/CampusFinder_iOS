@@ -42,6 +42,11 @@ extension LoginViewController {
     func bindNavigation() {
         viewModel.navigateToMain
             .bind(with: self) { owner, _ in
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                let rootVC = UINavigationController(rootViewController: TabBarController())
+                sceneDelegate?.window?.rootViewController = rootVC
+                sceneDelegate?.window?.makeKeyAndVisible()
             }
             .disposed(by: disposeBag)
         
