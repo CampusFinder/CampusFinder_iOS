@@ -11,9 +11,9 @@ class CFButton {
     static func mainButton(title: String) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .gray
-        button.layer.cornerRadius = 20
+        button.setTitleColor(CFColor.black04, for: .normal)
+        button.backgroundColor = CFColor.Bg.gray03
+        button.layer.cornerRadius = 10
         return button
     }
 }

@@ -22,13 +22,13 @@ class CFSearchView: BaseView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.systemBlue.cgColor
+        self.layer.borderColor = CFColor.Primary.blue02.cgColor
         
         searchImageView.image = UIImage(systemName: "magnifyingglass")
-        searchImageView.tintColor = .systemBlue
+        searchImageView.tintColor = CFColor.Primary.blue01
         
         searchPlaceHolder.text = "원하는 의뢰내용을 찾아보세요"
-        searchPlaceHolder.textColor = .systemBlue
+        searchPlaceHolder.textColor = CFColor.Primary.blue01
         searchPlaceHolder.font = .systemFont(ofSize: 15)
     }
     
