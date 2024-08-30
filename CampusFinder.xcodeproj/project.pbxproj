@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A52C7B5A31006B20BB /* TabBarViewController.swift */; };
+		01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A82C7B5A93006B20BB /* ChattingViewController.swift */; };
+		01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112AB2C7B5AA7006B20BB /* ProfileViewController.swift */; };
+		01D112F62C81B81F006B20BB /* CFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F52C81B81F006B20BB /* CFColor.swift */; };
+		01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F72C81BC32006B20BB /* UITextField+.swift */; };
+		01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F92C81BD52006B20BB /* CFLine.swift */; };
+		01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113062C81C5B7006B20BB /* UIFont+.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -39,6 +46,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01D112A52C7B5A31006B20BB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		01D112A82C7B5A93006B20BB /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		01D112AB2C7B5AA7006B20BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		01D112F52C81B81F006B20BB /* CFColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFColor.swift; sourceTree = "<group>"; };
+		01D112F72C81BC32006B20BB /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		01D112F92C81BD52006B20BB /* CFLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFLine.swift; sourceTree = "<group>"; };
+		01D112FD2C81C4F5006B20BB /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		01D112FE2C81C4F5006B20BB /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		01D112FF2C81C4F5006B20BB /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		01D113002C81C4F5006B20BB /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		01D113012C81C4F5006B20BB /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		01D113022C81C4F5006B20BB /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		01D113032C81C4F5006B20BB /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		01D113042C81C4F5006B20BB /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		01D113052C81C4F6006B20BB /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		01D113062C81C5B7006B20BB /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +106,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D112A42C7B5A25006B20BB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				01D112A52C7B5A31006B20BB /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		01D112A72C7B5A88006B20BB /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				01D112A82C7B5A93006B20BB /* ChattingViewController.swift */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		01D112AA2C7B5A9F006B20BB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				01D112AB2C7B5AA7006B20BB /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		01D112FB2C81C4BA006B20BB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				01D112FC2C81C4C2006B20BB /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		01D112FC2C81C4C2006B20BB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				01D112FD2C81C4F5006B20BB /* Pretendard-Black.ttf */,
+				01D113002C81C4F5006B20BB /* Pretendard-Bold.ttf */,
+				01D112FE2C81C4F5006B20BB /* Pretendard-ExtraBold.ttf */,
+				01D112FF2C81C4F5006B20BB /* Pretendard-ExtraLight.ttf */,
+				01D113012C81C4F5006B20BB /* Pretendard-Light.ttf */,
+				01D113022C81C4F5006B20BB /* Pretendard-Medium.ttf */,
+				01D113042C81C4F5006B20BB /* Pretendard-Regular.ttf */,
+				01D113052C81C4F6006B20BB /* Pretendard-SemiBold.ttf */,
+				01D113032C81C4F5006B20BB /* Pretendard-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		01E4085D2C633C0E0006B86F = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +174,7 @@
 		01E408682C633C0E0006B86F /* CampusFinder */ = {
 			isa = PBXGroup;
 			children = (
+				01D112FB2C81C4BA006B20BB /* Resource */,
 				01E409102C6A086F0006B86F /* Extension */,
 				01E408E42C6785420006B86F /* Util */,
 				01E4088C2C633DA60006B86F /* Application */,
@@ -126,6 +198,9 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				01D112AA2C7B5A9F006B20BB /* Profile */,
+				01D112A72C7B5A88006B20BB /* Chatting */,
+				01D112A42C7B5A25006B20BB /* TabBar */,
 				01E408F12C68937A0006B86F /* Home */,
 				01E408952C633E4B0006B86F /* Onboarding */,
 				01E408942C633E420006B86F /* Base */,
@@ -158,6 +233,8 @@
 			children = (
 				01E408E52C6785590006B86F /* CFButton.swift */,
 				01E4090B2C69F8BE0006B86F /* CFSearchView.swift */,
+				01D112F52C81B81F006B20BB /* CFColor.swift */,
+				01D112F92C81BD52006B20BB /* CFLine.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -216,6 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				01E409112C6A08950006B86F /* UIColor+.swift */,
+				01D112F72C81BC32006B20BB /* UITextField+.swift */,
+				01D113062C81C5B7006B20BB /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */,
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
 				01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
@@ -309,6 +389,7 @@
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
+				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
@@ -317,11 +398,16 @@
 				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
+				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,
+				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
 				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
+				01D112F62C81B81F006B20BB /* CFColor.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
 				01E408E62C6785590006B86F /* CFButton.swift in Sources */,
+				01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */,
+				01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
 				01E409032C68DE3D0006B86F /* HomeView.swift in Sources */,
 			);
