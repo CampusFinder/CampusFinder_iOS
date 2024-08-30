@@ -14,6 +14,14 @@
 		01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F72C81BC32006B20BB /* UITextField+.swift */; };
 		01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F92C81BD52006B20BB /* CFLine.swift */; };
 		01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113062C81C5B7006B20BB /* UIFont+.swift */; };
+		01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1130B2C81DE24006B20BB /* ProfessorView.swift */; };
+		01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */; };
+		01D113122C81E974006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D113112C81E974006B20BB /* Tabman */; };
+		01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */; };
+		01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113182C81EF4B006B20BB /* CategoryCase.swift */; };
+		01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */; };
+		01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */; };
+		01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -62,6 +70,13 @@
 		01D113042C81C4F5006B20BB /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		01D113052C81C4F6006B20BB /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		01D113062C81C5B7006B20BB /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		01D1130B2C81DE24006B20BB /* ProfessorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorView.swift; sourceTree = "<group>"; };
+		01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusViewController.swift; sourceTree = "<group>"; };
+		01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewController.swift; sourceTree = "<group>"; };
+		01D113182C81EF4B006B20BB /* CategoryCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCase.swift; sourceTree = "<group>"; };
+		01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewCell.swift; sourceTree = "<group>"; };
+		01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusHeaderView.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D113122C81E974006B20BB /* Tabman in Frameworks */,
 				01E408892C633CEC0006B86F /* Kingfisher in Frameworks */,
 				01E408862C633CE00006B86F /* SnapKit in Frameworks */,
 				01E408812C633C810006B86F /* RxSwift in Frameworks */,
@@ -133,6 +149,8 @@
 		01D112FB2C81C4BA006B20BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				01E408722C633C100006B86F /* Assets.xcassets */,
+				01E408742C633C100006B86F /* LaunchScreen.storyboard */,
 				01D112FC2C81C4C2006B20BB /* Font */,
 			);
 			path = Resource;
@@ -152,6 +170,37 @@
 				01D113032C81C4F5006B20BB /* Pretendard-Thin.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		01D1130D2C81E27E006B20BB /* FindCampus */ = {
+			isa = PBXGroup;
+			children = (
+				01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */,
+				01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */,
+				01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */,
+				01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */,
+			);
+			path = FindCampus;
+			sourceTree = "<group>";
+		};
+		01D113172C81EF3F006B20BB /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				01D113182C81EF4B006B20BB /* CategoryCase.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		01D1131A2C81F078006B20BB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				01E4088C2C633DA60006B86F /* Application */,
+				01D113172C81EF3F006B20BB /* Enum */,
+				01E409102C6A086F0006B86F /* Extension */,
+				01E408912C633E2C0006B86F /* Presentation */,
+				01E408E42C6785420006B86F /* Util */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		01E4085D2C633C0E0006B86F = {
@@ -175,12 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				01D112FB2C81C4BA006B20BB /* Resource */,
-				01E409102C6A086F0006B86F /* Extension */,
-				01E408E42C6785420006B86F /* Util */,
-				01E4088C2C633DA60006B86F /* Application */,
-				01E408912C633E2C0006B86F /* Presentation */,
-				01E408722C633C100006B86F /* Assets.xcassets */,
-				01E408742C633C100006B86F /* LaunchScreen.storyboard */,
+				01D1131A2C81F078006B20BB /* Source */,
 				01E408772C633C100006B86F /* Info.plist */,
 			);
 			path = CampusFinder;
@@ -198,6 +242,7 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				01D1130D2C81E27E006B20BB /* FindCampus */,
 				01D112AA2C7B5A9F006B20BB /* Profile */,
 				01D112A72C7B5A88006B20BB /* Chatting */,
 				01D112A42C7B5A25006B20BB /* TabBar */,
@@ -213,6 +258,7 @@
 			children = (
 				01E4088D2C633DC20006B86F /* BaseViewController.swift */,
 				01E4088F2C633DEA0006B86F /* BaseView.swift */,
+				01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -265,6 +311,7 @@
 				01E409002C68DB980006B86F /* HomeViewController.swift */,
 				01E409022C68DE3D0006B86F /* HomeView.swift */,
 				01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */,
+				01D1130B2C81DE24006B20BB /* ProfessorView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -320,6 +367,7 @@
 				01E408802C633C810006B86F /* RxSwift */,
 				01E408852C633CE00006B86F /* SnapKit */,
 				01E408882C633CEC0006B86F /* Kingfisher */,
+				01D113112C81E974006B20BB /* Tabman */,
 			);
 			productName = CampusFinder;
 			productReference = 01E408662C633C0E0006B86F /* CampusFinder.app */;
@@ -353,6 +401,7 @@
 				01E4087D2C633C810006B86F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				01E408842C633CE00006B86F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				01E408872C633CEC0006B86F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				01D113102C81E974006B20BB /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 01E408672C633C0E0006B86F /* Products */;
 			projectDirPath = "";
@@ -391,7 +440,10 @@
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
 				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
+				01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */,
+				01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
+				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
@@ -402,6 +454,7 @@
 				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
 				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
 				01D112F62C81B81F006B20BB /* CFColor.swift in Sources */,
+				01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
@@ -409,6 +462,9 @@
 				01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */,
 				01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
+				01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */,
+				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
+				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
 				01E409032C68DE3D0006B86F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +690,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		01D113102C81E974006B20BB /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 		01E4087D2C633C810006B86F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -661,6 +725,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		01D113112C81E974006B20BB /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01D113102C81E974006B20BB /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
 		01E4087E2C633C810006B86F /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01E4087D2C633C810006B86F /* XCRemoteSwiftPackageReference "RxSwift" */;
