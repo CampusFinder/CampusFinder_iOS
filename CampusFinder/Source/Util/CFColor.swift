@@ -21,7 +21,7 @@ enum CFColor {
         static let blue01 = UIColor(hexCode: "3964FF")
         static let blue02 = UIColor(hexCode: "6C8CFF")
         static let blue03 = UIColor(hexCode: "CBD6FF")
-        static let blue04 = UIColor(hexCode: "3964FF")
+        static let blue04 = UIColor(hexCode: "F2F2F8")
     }
     
     static let black01 = UIColor(hexCode: "222222")
