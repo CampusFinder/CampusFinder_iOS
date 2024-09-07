@@ -10,6 +10,11 @@ import SnapKit
 import Tabman
 import Pageboy
 
+import UIKit
+import SnapKit
+import Tabman
+import Pageboy
+
 final class FindCampusViewController: BaseViewController {
     deinit {
         print("deinit \(self)")
@@ -17,8 +22,7 @@ final class FindCampusViewController: BaseViewController {
     
     var containerView = UIView()
     let tabManVC = TabmanViewController()
-    
-    let categories = ["학생찾기", "의뢰찾기"]
+    let writingButton = CFButton.writingButton(title: "구인 글쓰기")
     
     private lazy var viewControllers: [UIViewController] = {
         return CategoryCase.allCases.map { FindCampusTableViewController(category: $0) }
@@ -55,6 +59,7 @@ final class FindCampusViewController: BaseViewController {
         containerView.addSubview(tabManVC.view)
         addChild(tabManVC)
         tabManVC.didMove(toParent: self)
+        view.addSubview(writingButton)
     }
     
     override func configureConstraints() {
@@ -64,6 +69,28 @@ final class FindCampusViewController: BaseViewController {
         tabManVC.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        writingButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(122)
+            make.height.equalTo(56)
+        }
+    }
+    
+    override func configureTarget() {
+        writingButton.addTarget(self, action: #selector(writingButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func writingButtonClicked() {
+        let currentCase = writingButton.titleLabel?.text
+        
+        if currentCase == "구인 글쓰기" {
+            let vc = WritePortfolioViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = WriteRequestViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
 }
 
@@ -74,6 +101,15 @@ extension FindCampusViewController: PageboyViewControllerDataSource, TMBarDataSo
     }
     
     func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        let currentCategory = CategoryCase.allCases[index]
+        
+        switch currentCategory {
+        case .student:
+            writingButton.setTitle("구인 글쓰기", for: .normal)
+        case .request:
+            writingButton.setTitle("의뢰 글쓰기", for: .normal)
+        }
+        
         return viewControllers[index]
     }
     

@@ -15,7 +15,7 @@ final class LoginView: BaseView {
     let phoneNumberLine = CFLine.lightGrayLine()
     let passwordField = UITextField()
     let passwordLine = CFLine.lightGrayLine()
-    let loginButton = CFButton.mainButton(title: "로그인")
+    let loginButton = CFButton.primaryButton(title: "로그인")
     let joinButton = UIButton()
     let primaryLine = CFLine.primaryLine()
     let findPasswordButton = UIButton()

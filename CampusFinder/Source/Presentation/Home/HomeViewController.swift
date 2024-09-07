@@ -22,7 +22,7 @@ final class HomeViewController: BaseViewController {
                       "foreignIcon",
                       "etcIcon"
     ]
-    let itemLabels = ["디자인", 
+    let itemLabels = ["디자인",
                       "문서작성",
                       "개발",
                       "영상",
@@ -80,7 +80,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let totalSpacing = (2 * 10) + (2 * 10)
+        let totalSpacing = 30
         let width = (Int(collectionView.bounds.width) - totalSpacing) / 3
         return CGSize(width: width, height: width)
     }

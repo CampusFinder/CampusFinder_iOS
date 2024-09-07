@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 final class FindCampusTableViewController: UITableViewController {
+    deinit {
+        print("deinit \(self)")
+    }
     
     var category: CategoryCase
     
@@ -34,12 +37,29 @@ final class FindCampusTableViewController: UITableViewController {
         let headerView = FindCampusHeaderView()
         headerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 45)
         headerView.setFilterAction(target: self, action: #selector(filterButtonTapped))
-
+        
         tableView.tableHeaderView = headerView
     }
     
     @objc private func filterButtonTapped() {
-        print("필터링 버튼이 눌렸습니다.")
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let latestAction = UIAlertAction(title: "최신순", style: .default) { _ in
+            print("최신순으로 정렬")
+        }
+        let lowPriceAction = UIAlertAction(title: "낮은 가격순", style: .default) { _ in
+            print("낮은 가격순으로 정렬")
+        }
+        let highPriceAction = UIAlertAction(title: "높은 가격순", style: .default) { _ in
+            print("높은 가격순으로 정렬")
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+        actionSheet.addAction(latestAction)
+        actionSheet.addAction(lowPriceAction)
+        actionSheet.addAction(highPriceAction)
+        actionSheet.addAction(cancelAction)
+
+        present(actionSheet, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,5 +73,10 @@ final class FindCampusTableViewController: UITableViewController {
         let data = category.dummyData[indexPath.row]
         cell.configure(with: data)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailCampusViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

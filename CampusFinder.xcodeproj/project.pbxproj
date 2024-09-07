@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */; };
+		012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428B2C88B26500C78861 /* WriteRequestViewController.swift */; };
+		012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428F2C88B36200C78861 /* WriteRequestView.swift */; };
+		012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42C62C8AF9A400C78861 /* CFSelectView.swift */; };
+		012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */; };
 		01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A52C7B5A31006B20BB /* TabBarViewController.swift */; };
 		01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A82C7B5A93006B20BB /* ChattingViewController.swift */; };
 		01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112AB2C7B5AA7006B20BB /* ProfileViewController.swift */; };
@@ -22,6 +27,8 @@
 		01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */; };
 		01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */; };
 		01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */; };
+		01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113222C820681006B20BB /* DetailCampusViewController.swift */; };
+		01D113252C820772006B20BB /* DetailCampusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113242C820772006B20BB /* DetailCampusView.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -54,6 +61,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewController.swift; sourceTree = "<group>"; };
+		012C428B2C88B26500C78861 /* WriteRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestViewController.swift; sourceTree = "<group>"; };
+		012C428F2C88B36200C78861 /* WriteRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestView.swift; sourceTree = "<group>"; };
+		012C42C62C8AF9A400C78861 /* CFSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSelectView.swift; sourceTree = "<group>"; };
+		012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioView.swift; sourceTree = "<group>"; };
 		01D112A52C7B5A31006B20BB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		01D112A82C7B5A93006B20BB /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		01D112AB2C7B5AA7006B20BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +89,8 @@
 		01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewCell.swift; sourceTree = "<group>"; };
 		01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusHeaderView.swift; sourceTree = "<group>"; };
+		01D113222C820681006B20BB /* DetailCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusViewController.swift; sourceTree = "<group>"; };
+		01D113242C820772006B20BB /* DetailCampusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusView.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +136,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012C42872C88B15B00C78861 /* WriteCampus */ = {
+			isa = PBXGroup;
+			children = (
+				012C428E2C88B33C00C78861 /* WriteRequest */,
+				012C428D2C88B33100C78861 /* WritePortfolio */,
+			);
+			path = WriteCampus;
+			sourceTree = "<group>";
+		};
+		012C428D2C88B33100C78861 /* WritePortfolio */ = {
+			isa = PBXGroup;
+			children = (
+				012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */,
+				012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */,
+			);
+			path = WritePortfolio;
+			sourceTree = "<group>";
+		};
+		012C428E2C88B33C00C78861 /* WriteRequest */ = {
+			isa = PBXGroup;
+			children = (
+				012C428B2C88B26500C78861 /* WriteRequestViewController.swift */,
+				012C428F2C88B36200C78861 /* WriteRequestView.swift */,
+			);
+			path = WriteRequest;
+			sourceTree = "<group>";
+		};
 		01D112A42C7B5A25006B20BB /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +236,21 @@
 			isa = PBXGroup;
 			children = (
 				01E4088C2C633DA60006B86F /* Application */,
+				01E408E42C6785420006B86F /* Util */,
 				01D113172C81EF3F006B20BB /* Enum */,
 				01E409102C6A086F0006B86F /* Extension */,
 				01E408912C633E2C0006B86F /* Presentation */,
-				01E408E42C6785420006B86F /* Util */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		01D113212C820670006B20BB /* DetailCampus */ = {
+			isa = PBXGroup;
+			children = (
+				01D113222C820681006B20BB /* DetailCampusViewController.swift */,
+				01D113242C820772006B20BB /* DetailCampusView.swift */,
+			);
+			path = DetailCampus;
 			sourceTree = "<group>";
 		};
 		01E4085D2C633C0E0006B86F = {
@@ -242,6 +292,8 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				012C42872C88B15B00C78861 /* WriteCampus */,
+				01D113212C820670006B20BB /* DetailCampus */,
 				01D1130D2C81E27E006B20BB /* FindCampus */,
 				01D112AA2C7B5A9F006B20BB /* Profile */,
 				01D112A72C7B5A88006B20BB /* Chatting */,
@@ -281,6 +333,7 @@
 				01E4090B2C69F8BE0006B86F /* CFSearchView.swift */,
 				01D112F52C81B81F006B20BB /* CFColor.swift */,
 				01D112F92C81BD52006B20BB /* CFLine.swift */,
+				012C42C62C8AF9A400C78861 /* CFSelectView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -432,22 +485,29 @@
 			files = (
 				01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */,
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
+				01D113252C820772006B20BB /* DetailCampusView.swift in Sources */,
 				01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
 				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
+				01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */,
 				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
+				012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */,
+				012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */,
 				01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */,
 				01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
+				012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
+				012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */,
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
 				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
+				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
 				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,

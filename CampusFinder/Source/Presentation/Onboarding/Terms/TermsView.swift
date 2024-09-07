@@ -11,7 +11,7 @@ import SnapKit
 final class TermsView: BaseView {
     
     let termsLabel = UILabel()
-    let nextButton = CFButton.mainButton(title: "다음")
+    let nextButton = CFButton.primaryButton(title: "다음")
     
     override func configureHierarchy() {
         addSubview(termsLabel)

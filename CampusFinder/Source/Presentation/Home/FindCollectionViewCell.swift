@@ -30,13 +30,10 @@ class FindCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureUI() {
-        // ImageView 설정
         itemImageView.contentMode = .scaleAspectFit
-        itemImageView.image = UIImage(named: "testItem")
         
-        // Label 설정
         itemLabel.textAlignment = .center
-        itemLabel.font = UIFont.systemFont(ofSize: 15)
+        itemLabel.font = .pretendard(size: 16, weight: .medium)
         itemLabel.textColor = .black
     }
     
@@ -44,13 +41,13 @@ class FindCollectionViewCell: UICollectionViewCell {
         itemImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.centerX.equalToSuperview()
-            make.size.equalTo(50)
+            make.size.equalTo(56)
         }
         
         itemLabel.snp.makeConstraints { make in
             make.top.equalTo(itemImageView.snp.bottom).offset(5)
-            make.leading.trailing.equalToSuperview().inset(5)
-            make.bottom.equalToSuperview().offset(-10)
+            make.horizontalEdges.equalToSuperview().inset(5)
+            make.bottom.equalToSuperview().inset(10)
         }
     }
 }
