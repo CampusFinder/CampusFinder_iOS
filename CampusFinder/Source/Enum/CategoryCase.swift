@@ -17,10 +17,16 @@ enum CategoryCase: String, CaseIterable {
             return [
                 DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: ""),
                 DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: ""),
+                DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: ""),
+                DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: ""),
+                DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: ""),
                 DummyData(title: "다양한 디자인 의뢰를 해드립니다", description: "")
             ]
         case .request:
             return [
+                DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원"),
+                DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원"),
+                DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원"),
                 DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원"),
                 DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원"),
                 DummyData(title: "지금 학교에서 ppt 화면 제작해주실 분 구해요~!", description: "제시금액 1000000원")
