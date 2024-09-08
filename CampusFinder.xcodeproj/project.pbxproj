@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */; };
 		012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */; };
 		012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428B2C88B26500C78861 /* WriteRequestViewController.swift */; };
 		012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428F2C88B36200C78861 /* WriteRequestView.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewModel.swift; sourceTree = "<group>"; };
 		012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewController.swift; sourceTree = "<group>"; };
 		012C428B2C88B26500C78861 /* WriteRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestViewController.swift; sourceTree = "<group>"; };
 		012C428F2C88B36200C78861 /* WriteRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestView.swift; sourceTree = "<group>"; };
@@ -139,8 +141,8 @@
 		012C42872C88B15B00C78861 /* WriteCampus */ = {
 			isa = PBXGroup;
 			children = (
-				012C428E2C88B33C00C78861 /* WriteRequest */,
 				012C428D2C88B33100C78861 /* WritePortfolio */,
+				012C428E2C88B33C00C78861 /* WriteRequest */,
 			);
 			path = WriteCampus;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */,
+				010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */,
 				012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */,
 			);
 			path = WritePortfolio;
@@ -496,6 +499,7 @@
 				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */,
+				010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */,
 				012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */,
 				01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */,
 				01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */,

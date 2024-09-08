@@ -10,9 +10,11 @@ import SnapKit
 
 class CFSelectView: BaseView {
 
+    let selectCategoryLabel = UILabel()
     let selectImageView = UIImageView()
     
     override func configureHierarchy() {
+        addSubview(selectCategoryLabel)
         addSubview(selectImageView)
     }
     
@@ -20,11 +22,20 @@ class CFSelectView: BaseView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
         
+        selectCategoryLabel.font = .pretendard(size: 16, weight: .semibold)
+        selectCategoryLabel.textColor = CFColor.black01
+        
         selectImageView.image = UIImage(systemName: "chevron.down")
         selectImageView.tintColor = CFColor.black01
     }
     
     override func configureConstraints() {
+        
+        selectCategoryLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.centerY.equalToSuperview()
+        }
+        
         selectImageView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-15)
             make.centerY.equalToSuperview()

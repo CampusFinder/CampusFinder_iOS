@@ -35,12 +35,12 @@ class CFButton {
     static func unselectedButton(title: String) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(CFColor.Primary.blue01, for: .normal)
+        button.setTitleColor(CFColor.black03, for: .normal)
         button.titleLabel?.font = .pretendard(size: 16, weight: .semibold)
         button.backgroundColor = .white
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
-        button.layer.borderColor = CFColor.Primary.blue03.cgColor
+        button.layer.borderColor = CFColor.Bg.gray02.cgColor
         return button
     }
 }

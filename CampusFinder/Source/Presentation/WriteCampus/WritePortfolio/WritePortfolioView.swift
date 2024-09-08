@@ -26,9 +26,22 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
     let nearSchoolLabel = UILabel()
     let nearSchoolStackView = UIStackView()
     let residenceButton = CFButton.unselectedButton(title: "거주중 입니다")
-    let noResidenceButton = CFButton.unselectedButton(title: "거주중이 아닙니다")
+    let nonResidenceButton = CFButton.unselectedButton(title: "거주중이 아닙니다")
     let questDetailLabel = UILabel()
     let questDetailTextView = UITextView()
+    
+    let placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.text = "의뢰에 대한 상세내용을 넣어주세요"
+        label.font = .systemFont(ofSize: 16)
+        label.textColor = .lightGray
+        return label
+    }()
+    
+    // 기본 높이값 설정
+    var textViewHeightConstraint: Constraint?
+    let initialHeight: CGFloat = 250
+    let maxHeight: CGFloat = 400 // 최대 높이값
     
     override func configureHierarchy() {
         addSubview(containerView)
@@ -36,7 +49,7 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         
         scrollView.addSubview(serviceLabel)
         scrollView.addSubview(serviceView)
-        scrollView.addSubview(serviceButton)
+        serviceView.addSubview(serviceButton)
         scrollView.addSubview(titleLabel)
         scrollView.addSubview(titleTextField)
         scrollView.addSubview(questMethodLabel)
@@ -47,11 +60,15 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         scrollView.addSubview(nearSchoolLabel)
         scrollView.addSubview(nearSchoolStackView)
         nearSchoolStackView.addArrangedSubview(residenceButton)
-        nearSchoolStackView.addArrangedSubview(noResidenceButton)
+        nearSchoolStackView.addArrangedSubview(nonResidenceButton)
         scrollView.addSubview(questDetailLabel)
         scrollView.addSubview(questDetailTextView)
         
+        questDetailTextView.addSubview(placeholderLabel)
         questDetailTextView.delegate = self
+        
+        
+        placeholderLabel.isHidden = !questDetailTextView.text.isEmpty
     }
     
     override func configureUI() {
@@ -92,7 +109,10 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         questDetailLabel.font = .pretendard(size: 18, weight: .semibold)
         questDetailLabel.textColor = CFColor.black01
         
+        
         questDetailTextView.layer.cornerRadius = 10
+        questDetailTextView.font = .pretendard(size: 16, weight: .medium)
+        questDetailTextView.textColor = CFColor.black01
     }
     
     override func configureConstraints() {
@@ -115,6 +135,10 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
             make.top.equalTo(serviceLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(containerView).inset(16)
             make.height.equalTo(45)
+        }
+        
+        serviceButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -166,7 +190,7 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
             make.height.equalToSuperview()
         }
         
-        noResidenceButton.snp.makeConstraints { make in
+        nonResidenceButton.snp.makeConstraints { make in
             make.height.equalToSuperview()
         }
         
@@ -178,20 +202,38 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         questDetailTextView.snp.makeConstraints { make in
             make.top.equalTo(questDetailLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(containerView).inset(16)
-            make.height.equalTo(260)
+            textViewHeightConstraint = make.height.equalTo(initialHeight).constraint
             make.bottom.equalTo(scrollView.snp.bottom)
+        }
+        
+        placeholderLabel.snp.makeConstraints { make in
+            make.top.equalTo(questDetailTextView).inset(8)
+            make.leading.equalTo(questDetailTextView).inset(5)
         }
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let maxHeight: CGFloat = 260 // 최대 높이 설정
         let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
-        if estimatedSize.height <= maxHeight {
+        if estimatedSize.height >= initialHeight && estimatedSize.height <= maxHeight {
             textView.snp.updateConstraints { make in
-                make.height.equalTo(estimatedSize.height) // 높이 업데이트
+                make.height.equalTo(estimatedSize.height)
+            }
+        } else if estimatedSize.height > maxHeight {
+            textView.snp.updateConstraints { make in
+                make.height.equalTo(maxHeight)
             }
         }
+        
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        placeholderLabel.isHidden = true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
     }
 }
