@@ -29,6 +29,10 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
     let nonResidenceButton = CFButton.unselectedButton(title: "거주중이 아닙니다")
     let questDetailLabel = UILabel()
     let questDetailTextView = UITextView()
+    let addPhotoLabel = UILabel()
+    let addPhotoView = CFAddPhotoView()
+    let completeView = UIView()
+    let completeButton = CFButton.primaryButton(title: "등록하기")
     
     let placeholderLabel: UILabel = {
         let label = UILabel()
@@ -40,8 +44,9 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
     
     // 기본 높이값 설정
     var textViewHeightConstraint: Constraint?
-    let initialHeight: CGFloat = 250
-    let maxHeight: CGFloat = 400 // 최대 높이값
+    let initialHeight: CGFloat = 260
+    let minHeight: CGFloat = 260
+    let maxHeight: CGFloat = 400
     
     override func configureHierarchy() {
         addSubview(containerView)
@@ -63,56 +68,68 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         nearSchoolStackView.addArrangedSubview(nonResidenceButton)
         scrollView.addSubview(questDetailLabel)
         scrollView.addSubview(questDetailTextView)
+        scrollView.addSubview(addPhotoLabel)
+        scrollView.addSubview(addPhotoView)
         
         questDetailTextView.addSubview(placeholderLabel)
         questDetailTextView.delegate = self
         
+        addSubview(completeView)
+        completeView.addSubview(completeButton)
         
         placeholderLabel.isHidden = !questDetailTextView.text.isEmpty
     }
     
     override func configureUI() {
-        serviceLabel.text = "서비스"
         serviceLabel.font = .pretendard(size: 18, weight: .semibold)
         serviceLabel.textColor = CFColor.black01
+        serviceLabel.attributedText = createAttributedText(fullText: "서비스*", coloredText: "*")
         
         serviceButton.backgroundColor = .clear
         
-        titleLabel.text = "제목"
         titleLabel.font = .pretendard(size: 18, weight: .semibold)
         titleLabel.textColor = CFColor.black01
+        titleLabel.attributedText = createAttributedText(fullText: "제목*", coloredText: "*")
         
         titleTextField.backgroundColor = .white
         titleTextField.layer.cornerRadius = 10
         titleTextField.addLeftPadding()
         titleTextField.placeholder = "최대 30자 입력가능"
         
-        questMethodLabel.text = "진행방식"
         questMethodLabel.font = .pretendard(size: 18, weight: .semibold)
         questMethodLabel.textColor = CFColor.black01
+        questMethodLabel.attributedText = createAttributedText(fullText: "진행방식*", coloredText: "*")
         
         questStackView.axis = .horizontal
         questStackView.spacing = 10
         questStackView.alignment = .center
         questStackView.distribution = .fillEqually
         
-        nearSchoolLabel.text = "학교 근처 거주 여부"
         nearSchoolLabel.font = .pretendard(size: 18, weight: .semibold)
         nearSchoolLabel.textColor = CFColor.black01
+        nearSchoolLabel.attributedText = createAttributedText(fullText: "학교 근처 거주 여부*", coloredText: "*")
         
         nearSchoolStackView.axis = .horizontal
         nearSchoolStackView.spacing = 10
         nearSchoolStackView.alignment = .center
         nearSchoolStackView.distribution = .fillEqually
         
-        questDetailLabel.text = "의뢰내용"
         questDetailLabel.font = .pretendard(size: 18, weight: .semibold)
         questDetailLabel.textColor = CFColor.black01
-        
+        questDetailLabel.attributedText = createAttributedText(fullText: "의뢰내용*", coloredText: "*")
         
         questDetailTextView.layer.cornerRadius = 10
         questDetailTextView.font = .pretendard(size: 16, weight: .medium)
         questDetailTextView.textColor = CFColor.black01
+        
+        addPhotoLabel.text = "참고사진"
+        addPhotoLabel.font = .pretendard(size: 18, weight: .semibold)
+        addPhotoLabel.textColor = CFColor.black01
+        
+        completeView.backgroundColor = .white
+        completeView.clipsToBounds = true
+        completeView.layer.cornerRadius = 10
+        completeView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     override func configureConstraints() {
@@ -203,12 +220,34 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
             make.top.equalTo(questDetailLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(containerView).inset(16)
             textViewHeightConstraint = make.height.equalTo(initialHeight).constraint
-            make.bottom.equalTo(scrollView.snp.bottom)
         }
         
         placeholderLabel.snp.makeConstraints { make in
-            make.top.equalTo(questDetailTextView).inset(8)
-            make.leading.equalTo(questDetailTextView).inset(5)
+            make.top.equalTo(questDetailTextView).inset(14)
+            make.leading.equalTo(questDetailTextView).inset(15)
+        }
+        
+        addPhotoLabel.snp.makeConstraints { make in
+            make.top.equalTo(questDetailTextView.snp.bottom).offset(28)
+            make.leading.equalTo(containerView).inset(16)
+        }
+        
+        addPhotoView.snp.makeConstraints { make in
+            make.top.equalTo(addPhotoLabel.snp.bottom).offset(10)
+            make.leading.equalTo(containerView).inset(16)
+            make.bottom.equalTo(scrollView.snp.bottom).inset(100)
+            make.size.equalTo(80)
+        }
+        
+        completeView.snp.makeConstraints { make in
+            make.horizontalEdges.bottom.equalToSuperview()
+            make.height.equalTo(114)
+        }
+        
+        completeButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(16)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.height.equalTo(53)
         }
     }
     
@@ -216,13 +255,17 @@ class WritePortfolioView: BaseView, UITextViewDelegate {
         let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
-        if estimatedSize.height >= initialHeight && estimatedSize.height <= maxHeight {
+        if estimatedSize.height >= minHeight && estimatedSize.height <= maxHeight {
             textView.snp.updateConstraints { make in
                 make.height.equalTo(estimatedSize.height)
             }
         } else if estimatedSize.height > maxHeight {
             textView.snp.updateConstraints { make in
                 make.height.equalTo(maxHeight)
+            }
+        } else if estimatedSize.height < minHeight {
+            textView.snp.updateConstraints { make in
+                make.height.equalTo(minHeight)
             }
         }
         
