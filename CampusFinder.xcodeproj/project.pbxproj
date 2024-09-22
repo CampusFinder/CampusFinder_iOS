@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */; };
 		010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */; };
+		010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09692C8EFE1600B4AF6C /* CFPriceView.swift */; };
 		012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */; };
 		012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428B2C88B26500C78861 /* WriteRequestViewController.swift */; };
 		012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428F2C88B36200C78861 /* WriteRequestView.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewModel.swift; sourceTree = "<group>"; };
 		010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddPhotoView.swift; sourceTree = "<group>"; };
+		010A09692C8EFE1600B4AF6C /* CFPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPriceView.swift; sourceTree = "<group>"; };
 		012C42892C88B24B00C78861 /* WritePortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewController.swift; sourceTree = "<group>"; };
 		012C428B2C88B26500C78861 /* WriteRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestViewController.swift; sourceTree = "<group>"; };
 		012C428F2C88B36200C78861 /* WriteRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				01D112F92C81BD52006B20BB /* CFLine.swift */,
 				012C42C62C8AF9A400C78861 /* CFSelectView.swift */,
 				010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */,
+				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
 				012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */,
+				010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
 				012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */,
