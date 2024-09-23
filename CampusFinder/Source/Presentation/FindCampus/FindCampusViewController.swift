@@ -10,11 +10,6 @@ import SnapKit
 import Tabman
 import Pageboy
 
-import UIKit
-import SnapKit
-import Tabman
-import Pageboy
-
 final class FindCampusViewController: BaseViewController {
     deinit {
         print("deinit \(self)")

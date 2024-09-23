@@ -46,7 +46,8 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc func searchButtonClicked() {
-        print(#function)
+        let vc = SearchViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func professorButtonClicked() {

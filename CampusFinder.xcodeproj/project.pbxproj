@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0103B2292CA017660031314F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2282CA017660031314F /* SearchViewController.swift */; };
+		0103B22B2CA018290031314F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B22A2CA018290031314F /* SearchView.swift */; };
+		0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B22C2CA019910031314F /* CFSearchBar.swift */; };
+		0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2342CA15BBF0031314F /* SearchResultViewController.swift */; };
+		0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2362CA163510031314F /* RecentKeywordCell.swift */; };
+		0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2382CA168530031314F /* UserDefaultsKey.swift */; };
+		0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */; };
 		010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */; };
 		010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */; };
 		010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09692C8EFE1600B4AF6C /* CFPriceView.swift */; };
@@ -64,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0103B2282CA017660031314F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0103B22A2CA018290031314F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0103B22C2CA019910031314F /* CFSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSearchBar.swift; sourceTree = "<group>"; };
+		0103B2342CA15BBF0031314F /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		0103B2362CA163510031314F /* RecentKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordCell.swift; sourceTree = "<group>"; };
+		0103B2382CA168530031314F /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewModel.swift; sourceTree = "<group>"; };
 		010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddPhotoView.swift; sourceTree = "<group>"; };
 		010A09692C8EFE1600B4AF6C /* CFPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPriceView.swift; sourceTree = "<group>"; };
@@ -142,6 +156,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0103B2272CA017560031314F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0103B2282CA017660031314F /* SearchViewController.swift */,
+				0103B22A2CA018290031314F /* SearchView.swift */,
+				0103B2362CA163510031314F /* RecentKeywordCell.swift */,
+				0103B2342CA15BBF0031314F /* SearchResultViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		012C42872C88B15B00C78861 /* WriteCampus */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +324,7 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0103B2272CA017560031314F /* Search */,
 				012C42872C88B15B00C78861 /* WriteCampus */,
 				01D113212C820670006B20BB /* DetailCampus */,
 				01D1130D2C81E27E006B20BB /* FindCampus */,
@@ -343,6 +369,9 @@
 				012C42C62C8AF9A400C78861 /* CFSelectView.swift */,
 				010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */,
 				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
+				0103B22C2CA019910031314F /* CFSearchBar.swift */,
+				0103B2382CA168530031314F /* UserDefaultsKey.swift */,
+				0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -500,12 +529,14 @@
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
 				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
+				0103B2292CA017660031314F /* SearchViewController.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
 				01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */,
 				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */,
+				0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */,
 				010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */,
 				012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */,
 				01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */,
@@ -514,13 +545,18 @@
 				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
 				012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */,
 				010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */,
+				0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
 				012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */,
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
+				0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */,
+				0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */,
 				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
+				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
+				0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
 				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,
 				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
