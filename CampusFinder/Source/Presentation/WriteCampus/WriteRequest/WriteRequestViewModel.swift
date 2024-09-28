@@ -9,10 +9,32 @@ import Foundation
 
 class WriteRequestViewModel {
     
+    enum Discussion {
+        case discussion
+        case nonDiscussion
+    }
+    
+    enum RightNow {
+        case rightNow
+        case nonRightNow
+    }
+    
     enum QuestMethod: String {
         case faceToFace = "대면"
         case nonFaceToFace = "비대면"
         case dontCare = "상관없음"
+    }
+    
+    private var selectedDiscussion: Discussion = .nonDiscussion {
+        didSet {
+            discussionDidChange?(selectedDiscussion)
+        }
+    }
+    
+    private var selectedRightNow: RightNow = .nonRightNow {
+        didSet {
+            rightNowDidChange?(selectedRightNow)
+        }
     }
     
     private var selectedQuestMethod: QuestMethod? {
@@ -33,11 +55,21 @@ class WriteRequestViewModel {
         }
     }
     
+    var discussionDidChange: ((Discussion) -> Void)?
+    var rightNowDidChange: ((RightNow) -> Void)?
     var categoryDidChange: ((String?) -> Void)?
     var questMethodDidChange: ((QuestMethod?) -> Void)?
     var deadlineDidChange: ((String?) -> Void)?
     
     let categories = ["디자인", "문서작성", "개발", "영상", "외국어", "기타"]
+    
+    func toggleDiscussion() {
+        selectedDiscussion = selectedDiscussion == .discussion ? .nonDiscussion : .discussion
+    }
+    
+    func toggleRightNow() {
+        selectedRightNow = selectedRightNow == .rightNow ? .nonRightNow : .rightNow
+    }
     
     func selectCategory(_ category: String) {
         selectedCategory = category

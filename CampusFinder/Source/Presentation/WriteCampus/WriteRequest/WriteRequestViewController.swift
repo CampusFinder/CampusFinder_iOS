@@ -29,6 +29,10 @@ final class WriteRequestViewController: BaseViewController {
     override func configureTarget() {
         writeRequestView.serviceButton.addTarget(self, action: #selector(showCategorySelection), for: .touchUpInside)
         
+        writeRequestView.discussionButton.addTarget(self, action: #selector(selectDiscussion), for: .touchUpInside)
+        
+        writeRequestView.rightNowButton.addTarget(self, action: #selector(selectRightNow), for: .touchUpInside)
+        
         writeRequestView.faceToFaceButton.addTarget(self, action: #selector(selectFaceToFace), for: .touchUpInside)
         writeRequestView.nonFaceToFaceButton.addTarget(self, action: #selector(selectNonFaceToFace), for: .touchUpInside)
         writeRequestView.dontCareButton.addTarget(self, action: #selector(selectDontCare), for: .touchUpInside)
@@ -46,6 +50,24 @@ final class WriteRequestViewController: BaseViewController {
         
         viewModel.deadlineDidChange = { [weak self] selectedDeadline in
             self?.writeRequestView.deadlineView.selectCategoryLabel.text = selectedDeadline ?? ""
+        }
+        
+        viewModel.discussionDidChange = { [weak self] discussion in
+            switch discussion {
+            case .discussion:
+                self?.writeRequestView.discussionButton.setImage(UIImage(named: "toggle2"), for: .normal)
+            case .nonDiscussion:
+                self?.writeRequestView.discussionButton.setImage(UIImage(named: "toggle"), for: .normal)
+            }
+        }
+        
+        viewModel.rightNowDidChange = { [weak self] rightNow in
+            switch rightNow {
+            case .rightNow:
+                self?.writeRequestView.rightNowButton.setImage(UIImage(named: "toggle2"), for: .normal)
+            case .nonRightNow:
+                self?.writeRequestView.rightNowButton.setImage(UIImage(named: "toggle"), for: .normal)
+            }
         }
     }
     
@@ -95,6 +117,13 @@ final class WriteRequestViewController: BaseViewController {
         self.present(datePickerVC, animated: true, completion: nil)
     }
 
+    @objc private func selectDiscussion() {
+        viewModel.toggleDiscussion()
+    }
+    
+    @objc private func selectRightNow() {
+        viewModel.toggleRightNow()
+    }
     
     @objc private func selectFaceToFace() {
         viewModel.selectQuestMethod(.faceToFace)
