@@ -61,6 +61,6 @@ final class SearchResultTableViewCell: BaseTableViewCell {
     
     func configure(with data: DummyData) {
         titleLabel.text = data.title
-        descriptionLabel.text = data.description
+        descriptionLabel.text = data.nickname
     }
 }
