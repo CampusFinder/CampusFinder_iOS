@@ -28,7 +28,7 @@ final class FindCampusTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(FindCampusTableViewCell.self, forCellReuseIdentifier: "FindCampusTableViewCell")
-        tableView.rowHeight = 130
+        tableView.rowHeight = 133
         
         setupHeaderView()
     }
