@@ -24,6 +24,7 @@ class WriteRequestView: BaseView, UITextViewDelegate {
     let discusstionLabel = UILabel()
     let deadlineLabel = UILabel()
     let deadlineView = CFSelectView()
+    let deadlineButton = UIButton()
     let rightNowButton = UIButton()
     let rightNowLabel = UILabel()
     let requestMethodLabel = UILabel()
@@ -58,7 +59,7 @@ class WriteRequestView: BaseView, UITextViewDelegate {
         
         scrollView.addSubview(serviceLabel)
         scrollView.addSubview(serviceView)
-        scrollView.addSubview(serviceButton)
+        serviceView.addSubview(serviceButton)
         scrollView.addSubview(titleLabel)
         scrollView.addSubview(titleTextField)
         scrollView.addSubview(priceLabel)
@@ -67,6 +68,7 @@ class WriteRequestView: BaseView, UITextViewDelegate {
         scrollView.addSubview(discusstionLabel)
         scrollView.addSubview(deadlineLabel)
         scrollView.addSubview(deadlineView)
+        deadlineView.addSubview(deadlineButton)
         scrollView.addSubview(rightNowButton)
         scrollView.addSubview(rightNowLabel)
         scrollView.addSubview(requestMethodLabel)
@@ -118,6 +120,8 @@ class WriteRequestView: BaseView, UITextViewDelegate {
         deadlineLabel.font = .pretendard(size: 18, weight: .semibold)
         deadlineLabel.textColor = CFColor.black01
         deadlineLabel.attributedText = createAttributedText(fullText: "마감기한*", coloredText: "*")
+        
+        deadlineButton.backgroundColor = .clear
         
         rightNowButton.setImage(UIImage(named: "toggle"), for: .normal)
         rightNowButton.imageView?.contentMode = .scaleAspectFit
@@ -175,6 +179,10 @@ class WriteRequestView: BaseView, UITextViewDelegate {
             make.height.equalTo(45)
         }
         
+        serviceButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(serviceView.snp.bottom).offset(28)
             make.leading.equalTo(containerView).inset(16)
@@ -217,6 +225,10 @@ class WriteRequestView: BaseView, UITextViewDelegate {
             make.top.equalTo(deadlineLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(containerView).inset(16)
             make.height.equalTo(45)
+        }
+        
+        deadlineButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         rightNowButton.snp.makeConstraints { make in
