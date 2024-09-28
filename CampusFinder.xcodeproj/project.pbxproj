@@ -14,6 +14,10 @@
 		0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2362CA163510031314F /* RecentKeywordCell.swift */; };
 		0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2382CA168530031314F /* UserDefaultsKey.swift */; };
 		0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */; };
+		0103B23E2CA17B290031314F /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23D2CA17B290031314F /* SearchResultTableViewController.swift */; };
+		0103B2402CA17E770031314F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */; };
+		0103B2422CA180D00031314F /* WriteRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2412CA180D00031314F /* WriteRequestViewModel.swift */; };
+		0103B24D2CA7FBF30031314F /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */; };
 		010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */; };
 		010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */; };
 		010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09692C8EFE1600B4AF6C /* CFPriceView.swift */; };
@@ -78,6 +82,10 @@
 		0103B2362CA163510031314F /* RecentKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordCell.swift; sourceTree = "<group>"; };
 		0103B2382CA168530031314F /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		0103B23D2CA17B290031314F /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
+		0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		0103B2412CA180D00031314F /* WriteRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestViewModel.swift; sourceTree = "<group>"; };
+		0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewModel.swift; sourceTree = "<group>"; };
 		010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddPhotoView.swift; sourceTree = "<group>"; };
 		010A09692C8EFE1600B4AF6C /* CFPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPriceView.swift; sourceTree = "<group>"; };
@@ -162,9 +170,18 @@
 				0103B2282CA017660031314F /* SearchViewController.swift */,
 				0103B22A2CA018290031314F /* SearchView.swift */,
 				0103B2362CA163510031314F /* RecentKeywordCell.swift */,
-				0103B2342CA15BBF0031314F /* SearchResultViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		0103B23C2CA17AD60031314F /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				0103B2342CA15BBF0031314F /* SearchResultViewController.swift */,
+				0103B23D2CA17B290031314F /* SearchResultTableViewController.swift */,
+				0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */,
+			);
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		012C42872C88B15B00C78861 /* WriteCampus */ = {
@@ -190,7 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				012C428B2C88B26500C78861 /* WriteRequestViewController.swift */,
+				0103B2412CA180D00031314F /* WriteRequestViewModel.swift */,
 				012C428F2C88B36200C78861 /* WriteRequestView.swift */,
+				0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */,
 			);
 			path = WriteRequest;
 			sourceTree = "<group>";
@@ -324,6 +343,7 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0103B23C2CA17AD60031314F /* SearchResult */,
 				0103B2272CA017560031314F /* Search */,
 				012C42872C88B15B00C78861 /* WriteCampus */,
 				01D113212C820670006B20BB /* DetailCampus */,
@@ -522,9 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */,
+				0103B2402CA17E770031314F /* SearchResultTableViewCell.swift in Sources */,
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
 				010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */,
 				01D113252C820772006B20BB /* DetailCampusView.swift in Sources */,
+				0103B24D2CA7FBF30031314F /* DatePickerViewController.swift in Sources */,
 				01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
 				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
@@ -545,10 +567,12 @@
 				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
 				012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */,
 				010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */,
+				0103B23E2CA17B290031314F /* SearchResultTableViewController.swift in Sources */,
 				0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */,
 				01E408E32C6783290006B86F /* LoginView.swift in Sources */,
 				01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */,
 				012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */,
+				0103B2422CA180D00031314F /* WriteRequestViewModel.swift in Sources */,
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
 				0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */,
 				0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */,
@@ -724,7 +748,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -756,7 +780,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
