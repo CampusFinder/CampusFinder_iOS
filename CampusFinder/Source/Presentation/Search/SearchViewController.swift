@@ -95,7 +95,8 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         let keyword = recentKeywords[indexPath.row]
         cell.configure(with: keyword)
         
-        cell.deleteButtonTapped = {
+        cell.deleteButtonTapped = { [weak self] in
+            guard let self = self else { return }
             UserDefaultsManager.shared.deleteRecentKeyword(keyword)
             self.loadRecentKeywords()
         }
