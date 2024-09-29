@@ -44,7 +44,7 @@ extension LoginViewController {
             .bind(with: self) { owner, _ in
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
-                let rootVC = UINavigationController(rootViewController: TabBarController())
+                let rootVC = TabBarController()
                 sceneDelegate?.window?.rootViewController = rootVC
                 sceneDelegate?.window?.makeKeyAndVisible()
             }

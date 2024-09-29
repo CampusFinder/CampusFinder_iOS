@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "ㅇㄹ", style: .plain, target: nil, action: nil)
         
         tabBar.backgroundColor = .white
         tabBar.tintColor = UIColor.black
@@ -21,13 +21,16 @@ class TabBarController: UITabBarController {
         
         let home = HomeViewController()
         home.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "homeTab"), tag: 0)
+        let homeNav = UINavigationController(rootViewController: home)
         
         let favorite = ChattingViewController()
         favorite.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(named: "chattingTab"), tag: 1)
+        let favoriteNav = UINavigationController(rootViewController: favorite)
         
         let profile = ProfileViewController()
         profile.tabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: "profileTab"), tag: 2)
+        let profileNav = UINavigationController(rootViewController: profile)
         
-        setViewControllers([home,favorite,profile], animated: true)
+        setViewControllers([homeNav,favoriteNav,profileNav], animated: true)
     }
 }

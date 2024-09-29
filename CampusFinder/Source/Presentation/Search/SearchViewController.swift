@@ -28,6 +28,11 @@ final class SearchViewController: BaseViewController {
         loadRecentKeywords()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     override func configureTarget() {
         searchView.allDeleteButton.addTarget(self, action: #selector(deleteAllKeywords), for: .touchUpInside)
     }
