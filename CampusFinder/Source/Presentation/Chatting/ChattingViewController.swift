@@ -21,12 +21,21 @@ final class ChattingViewController: BaseViewController {
     let questButton = UIButton()
     let chattingTableView = UITableView()
     
-    var messages: [String] = ["안녕하세요", "어떻게 도와드릴까요?", "문의사항이 있으면 연락 주세요!"]
+    var messages: [ChattingDummyData] = ChattingDummy().dummy
+    var filteredMessages: [ChattingDummyData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+        filteredMessages = messages
+        updateButtonStyles(selectedButton: allDataButton)
+    }
+    
+    override func configureTarget() {
+        allDataButton.addTarget(self, action: #selector(showAllMessages), for: .touchUpInside)
+        employmentButton.addTarget(self, action: #selector(showEmploymentMessages), for: .touchUpInside)
+        questButton.addTarget(self, action: #selector(showQuestMessages), for: .touchUpInside)
     }
     
     override func configureNavigation() {
@@ -109,12 +118,44 @@ final class ChattingViewController: BaseViewController {
         chattingTableView.backgroundColor = .white
         chattingTableView.rowHeight = 96
     }
+    
+    @objc private func showAllMessages() {
+        filteredMessages = messages
+        chattingTableView.reloadData()
+        updateButtonStyles(selectedButton: allDataButton)
+    }
+    
+    @objc private func showEmploymentMessages() {
+        filteredMessages = messages.filter { $0.type == "고용" }
+        chattingTableView.reloadData()
+        updateButtonStyles(selectedButton: employmentButton)
+    }
+    
+    @objc private func showQuestMessages() {
+        filteredMessages = messages.filter { $0.type == "의뢰" }
+        chattingTableView.reloadData()
+        updateButtonStyles(selectedButton: questButton)
+    }
+    
+    private func updateButtonStyles(selectedButton: UIButton) {
+        let buttons = [allDataButton, employmentButton, questButton]
+        
+        for button in buttons {
+            if button == selectedButton {
+                button.setTitleColor(CFColor.Primary.blue01, for: .normal)
+                button.layer.borderColor = CFColor.Primary.blue01.cgColor
+            } else {
+                button.setTitleColor(CFColor.Bg.gray04, for: .normal)
+                button.layer.borderColor = CFColor.Bg.gray04.cgColor
+            }
+        }
+    }
 }
 
 extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return filteredMessages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,7 +163,7 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let message = messages[indexPath.row]
+        let message = filteredMessages[indexPath.row]
         cell.configure(with: message)
         cell.backgroundColor = .white
         return cell

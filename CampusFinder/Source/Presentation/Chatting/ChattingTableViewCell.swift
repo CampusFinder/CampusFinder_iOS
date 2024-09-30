@@ -14,11 +14,13 @@ final class ChattingTableViewCell: BaseTableViewCell {
     let profileImageView = UIImageView()
     let nicknameLabel = UILabel()
     let messageLabel = UILabel()
+    let timeLabel = UILabel()
     
     override func configureHierarchy() {
         contentView.addSubview(profileImageView)
         contentView.addSubview(nicknameLabel)
         contentView.addSubview(messageLabel)
+        contentView.addSubview(timeLabel)
     }
     
     override func configureView() {
@@ -55,8 +57,8 @@ final class ChattingTableViewCell: BaseTableViewCell {
         }
     }
     
-    func configure(with message: String) {
-        messageLabel.text = message
+    func configure(with message: ChattingDummyData) {
+        nicknameLabel.text = message.nickname
+        messageLabel.text = message.lastChatting
     }
 }
-
