@@ -20,13 +20,18 @@ final class FindCampusViewController: BaseViewController {
     let writingButton = CFButton.writingButton(title: "구인 글쓰기")
     
     private lazy var viewControllers: [UIViewController] = {
-        return CategoryCase.allCases.map { FindCampusTableViewController(category: $0) }
+        return FinderCase.allCases.map { FindCampusTableViewController(category: $0) }
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTabMan()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
     
     private func configureTabMan() {
@@ -96,7 +101,7 @@ extension FindCampusViewController: PageboyViewControllerDataSource, TMBarDataSo
     }
     
     func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
-        let currentCategory = CategoryCase.allCases[index]
+        let currentCategory = FinderCase.allCases[index]
         
         switch currentCategory {
         case .student:
@@ -113,7 +118,7 @@ extension FindCampusViewController: PageboyViewControllerDataSource, TMBarDataSo
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        let title = CategoryCase.allCases[index].rawValue
+        let title = FinderCase.allCases[index].rawValue
         return TMBarItem(title: title)
     }
 }

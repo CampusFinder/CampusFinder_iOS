@@ -13,9 +13,9 @@ final class FindCampusTableViewController: UITableViewController {
         print("deinit \(self)")
     }
     
-    var category: CategoryCase
+    var category: FinderCase
     
-    init(category: CategoryCase) {
+    init(category: FinderCase) {
         self.category = category
         super.init(nibName: nil, bundle: nil)
     }
