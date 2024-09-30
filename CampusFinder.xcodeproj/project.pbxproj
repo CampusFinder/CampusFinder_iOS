@@ -20,6 +20,10 @@
 		0103B24D2CA7FBF30031314F /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */; };
 		0103B2512CA936E80031314F /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2502CA936E80031314F /* ChattingTableViewCell.swift */; };
 		0103B2532CAA95090031314F /* ChattingDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2522CAA95090031314F /* ChattingDummyData.swift */; };
+		0103B2562CAABF700031314F /* ProfessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2552CAABF700031314F /* ProfessorViewController.swift */; };
+		0103B2582CAAC0000031314F /* ProfessorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2572CAAC0000031314F /* ProfessorTableViewController.swift */; };
+		0103B25A2CAAC06B0031314F /* CategoryCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2592CAAC06B0031314F /* CategoryCase.swift */; };
+		0103B25C2CAAC7ED0031314F /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B25B2CAAC7ED0031314F /* ProfessorTableViewCell.swift */; };
 		010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */; };
 		010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */; };
 		010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A09692C8EFE1600B4AF6C /* CFPriceView.swift */; };
@@ -39,7 +43,7 @@
 		01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */; };
 		01D113122C81E974006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D113112C81E974006B20BB /* Tabman */; };
 		01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */; };
-		01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113182C81EF4B006B20BB /* CategoryCase.swift */; };
+		01D113192C81EF4B006B20BB /* FinderCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113182C81EF4B006B20BB /* FinderCase.swift */; };
 		01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */; };
 		01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */; };
 		01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */; };
@@ -90,6 +94,10 @@
 		0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		0103B2502CA936E80031314F /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
 		0103B2522CAA95090031314F /* ChattingDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingDummyData.swift; sourceTree = "<group>"; };
+		0103B2552CAABF700031314F /* ProfessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorViewController.swift; sourceTree = "<group>"; };
+		0103B2572CAAC0000031314F /* ProfessorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewController.swift; sourceTree = "<group>"; };
+		0103B2592CAAC06B0031314F /* CategoryCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCase.swift; sourceTree = "<group>"; };
+		0103B25B2CAAC7ED0031314F /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
 		010A092F2C8D6C4000B4AF6C /* WritePortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioViewModel.swift; sourceTree = "<group>"; };
 		010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddPhotoView.swift; sourceTree = "<group>"; };
 		010A09692C8EFE1600B4AF6C /* CFPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPriceView.swift; sourceTree = "<group>"; };
@@ -117,7 +125,7 @@
 		01D1130B2C81DE24006B20BB /* ProfessorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorView.swift; sourceTree = "<group>"; };
 		01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusViewController.swift; sourceTree = "<group>"; };
 		01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewController.swift; sourceTree = "<group>"; };
-		01D113182C81EF4B006B20BB /* CategoryCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCase.swift; sourceTree = "<group>"; };
+		01D113182C81EF4B006B20BB /* FinderCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCase.swift; sourceTree = "<group>"; };
 		01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewCell.swift; sourceTree = "<group>"; };
 		01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusHeaderView.swift; sourceTree = "<group>"; };
@@ -186,6 +194,16 @@
 				0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */,
 			);
 			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		0103B2542CAABF330031314F /* Professor */ = {
+			isa = PBXGroup;
+			children = (
+				0103B2552CAABF700031314F /* ProfessorViewController.swift */,
+				0103B2572CAAC0000031314F /* ProfessorTableViewController.swift */,
+				0103B25B2CAAC7ED0031314F /* ProfessorTableViewCell.swift */,
+			);
+			path = Professor;
 			sourceTree = "<group>";
 		};
 		012C42872C88B15B00C78861 /* WriteCampus */ = {
@@ -284,7 +302,8 @@
 		01D113172C81EF3F006B20BB /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				01D113182C81EF4B006B20BB /* CategoryCase.swift */,
+				01D113182C81EF4B006B20BB /* FinderCase.swift */,
+				0103B2592CAAC06B0031314F /* CategoryCase.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -349,6 +368,7 @@
 		01E408912C633E2C0006B86F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0103B2542CAABF330031314F /* Professor */,
 				0103B23C2CA17AD60031314F /* SearchResult */,
 				0103B2272CA017560031314F /* Search */,
 				012C42872C88B15B00C78861 /* WriteCampus */,
@@ -566,9 +586,10 @@
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
 				012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */,
 				0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */,
+				0103B25A2CAAC06B0031314F /* CategoryCase.swift in Sources */,
 				010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */,
 				012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */,
-				01D113192C81EF4B006B20BB /* CategoryCase.swift in Sources */,
+				01D113192C81EF4B006B20BB /* FinderCase.swift in Sources */,
 				01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */,
 				01E408902C633DEA0006B86F /* BaseView.swift in Sources */,
 				01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */,
@@ -586,6 +607,7 @@
 				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
 				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
+				0103B25C2CAAC7ED0031314F /* ProfessorTableViewCell.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
@@ -600,11 +622,13 @@
 				01E408E62C6785590006B86F /* CFButton.swift in Sources */,
 				01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */,
 				01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */,
+				0103B2562CAABF700031314F /* ProfessorViewController.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
 				0103B2532CAA95090031314F /* ChattingDummyData.swift in Sources */,
 				01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
+				0103B2582CAAC0000031314F /* ProfessorTableViewController.swift in Sources */,
 				01E409032C68DE3D0006B86F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +780,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,6 +813,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
