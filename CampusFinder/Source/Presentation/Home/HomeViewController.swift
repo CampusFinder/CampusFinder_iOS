@@ -56,7 +56,8 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc func professorButtonClicked() {
-        print(#function)
+        let vc = ProfessorViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
