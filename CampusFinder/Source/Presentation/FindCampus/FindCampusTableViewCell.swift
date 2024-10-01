@@ -30,7 +30,7 @@ final class FindCampusTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .pretendard(size: 18, weight: .semibold)
         label.textColor = CFColor.black01
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
     }()
 
@@ -71,18 +71,17 @@ final class FindCampusTableViewCell: BaseTableViewCell {
         categoryLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-
+        
         titleLabel.snp.makeConstraints { make in
             titleLabelWithCategoryTopConstraint = make.top.equalTo(categoryView.snp.bottom).offset(8).constraint
-            titleLabelWithoutCategoryTopConstraint = make.top.equalToSuperview().inset(17).constraint
+            titleLabelWithoutCategoryTopConstraint = make.top.equalToSuperview().inset(16).constraint
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalTo(posterImageView.snp.leading).offset(-16)
         }
 
         nicknameLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(21)
+            make.bottom.equalToSuperview().inset(18)
             make.leading.equalToSuperview().inset(16)
-            make.trailing.equalTo(posterImageView.snp.leading).inset(16)
         }
 
         posterImageView.snp.makeConstraints { make in
@@ -90,7 +89,6 @@ final class FindCampusTableViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview().inset(16)
             make.size.equalTo(93)
         }
-
         titleLabelWithoutCategoryTopConstraint?.deactivate()
         titleLabelWithCategoryTopConstraint?.activate()
     }
@@ -99,8 +97,14 @@ final class FindCampusTableViewCell: BaseTableViewCell {
         titleLabel.text = data.title
         nicknameLabel.text = data.nickname
         
-        categoryView.isHidden = !data.isNearSchool
-        titleLabelWithoutCategoryTopConstraint?.deactivate()
-        titleLabelWithCategoryTopConstraint?.activate()
+        if data.isNearSchool {
+            categoryView.isHidden = false
+            titleLabelWithoutCategoryTopConstraint?.deactivate()
+            titleLabelWithCategoryTopConstraint?.activate()
+        } else {
+            categoryView.isHidden = true
+            titleLabelWithCategoryTopConstraint?.deactivate()
+            titleLabelWithoutCategoryTopConstraint?.activate()
+        }
     }
 }
