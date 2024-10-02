@@ -46,10 +46,11 @@
 		01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */; };
 		01D113192C81EF4B006B20BB /* FinderCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113182C81EF4B006B20BB /* FinderCase.swift */; };
 		01D1131C2C81F1AA006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */; };
-		01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */; };
+		01D1131E2C81F278006B20BB /* FindStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131D2C81F278006B20BB /* FindStudentTableViewCell.swift */; };
 		01D113202C81F3EE006B20BB /* FindCampusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */; };
 		01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113222C820681006B20BB /* DetailCampusViewController.swift */; };
 		01D113252C820772006B20BB /* DetailCampusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113242C820772006B20BB /* DetailCampusView.swift */; };
+		01DAB2ED2CAD672700E21D15 /* FindQuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2EC2CAD672700E21D15 /* FindQuestTableViewCell.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -129,10 +130,11 @@
 		01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewController.swift; sourceTree = "<group>"; };
 		01D113182C81EF4B006B20BB /* FinderCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCase.swift; sourceTree = "<group>"; };
 		01D1131B2C81F1AA006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusTableViewCell.swift; sourceTree = "<group>"; };
+		01D1131D2C81F278006B20BB /* FindStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindStudentTableViewCell.swift; sourceTree = "<group>"; };
 		01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCampusHeaderView.swift; sourceTree = "<group>"; };
 		01D113222C820681006B20BB /* DetailCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusViewController.swift; sourceTree = "<group>"; };
 		01D113242C820772006B20BB /* DetailCampusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusView.swift; sourceTree = "<group>"; };
+		01DAB2EC2CAD672700E21D15 /* FindQuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindQuestTableViewCell.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,7 +297,8 @@
 			children = (
 				01D1130E2C81E2D7006B20BB /* FindCampusViewController.swift */,
 				01D113152C81ECAB006B20BB /* FindCampusTableViewController.swift */,
-				01D1131D2C81F278006B20BB /* FindCampusTableViewCell.swift */,
+				01D1131D2C81F278006B20BB /* FindStudentTableViewCell.swift */,
+				01DAB2EC2CAD672700E21D15 /* FindQuestTableViewCell.swift */,
 				01D1131F2C81F3EE006B20BB /* FindCampusHeaderView.swift */,
 			);
 			path = FindCampus;
@@ -617,9 +620,10 @@
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
 				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,
 				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
+				01DAB2ED2CAD672700E21D15 /* FindQuestTableViewCell.swift in Sources */,
 				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
 				01D112F62C81B81F006B20BB /* CFColor.swift in Sources */,
-				01D1131E2C81F278006B20BB /* FindCampusTableViewCell.swift in Sources */,
+				01D1131E2C81F278006B20BB /* FindStudentTableViewCell.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,

@@ -90,7 +90,6 @@ final class FindCampusViewController: BaseViewController {
             let vc = WriteRequestViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
-
     }
 }
 
