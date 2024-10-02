@@ -34,6 +34,10 @@ final class ProfessorViewController: BaseViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    override func configureNavigation() {
+        navigationItem.title = "교수님 의뢰공고"
+    }
+    
     private func configureTabMan() {
         tabManVC.dataSource = self
         
