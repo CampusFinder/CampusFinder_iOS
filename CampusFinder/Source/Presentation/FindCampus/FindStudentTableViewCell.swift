@@ -74,7 +74,7 @@ final class FindStudentTableViewCell: BaseTableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             titleLabelWithCategoryTopConstraint = make.top.equalTo(categoryView.snp.bottom).offset(8).constraint
-            titleLabelWithoutCategoryTopConstraint = make.top.equalToSuperview().inset(16).constraint
+            titleLabelWithoutCategoryTopConstraint = make.top.equalToSuperview().inset(18).constraint
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalTo(posterImageView.snp.leading).offset(-16)
         }

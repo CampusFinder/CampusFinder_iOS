@@ -33,7 +33,7 @@ final class FindQuestTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .pretendard(size: 18, weight: .semibold)
         label.textColor = CFColor.black01
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
     
