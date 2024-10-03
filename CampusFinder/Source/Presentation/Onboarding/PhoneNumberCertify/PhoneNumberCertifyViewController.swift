@@ -15,27 +15,22 @@ final class PhoneNumberCertifyViewController: BaseViewController {
     }
     
     private let phoneNumberCertifyView = PhoneNumberCertifyView()
-    var viewModel = PhoneNumberCertifyViewModel()
     
     override func loadView() {
         self.view = phoneNumberCertifyView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bindViewModel()
-        bindNavigation()
+    override func configureNavigation() {
+        navigationItem.title = "휴대폰 인증"
     }
     
-    func bindViewModel() {
-        phoneNumberCertifyView.nextButton.rx.tap
-            .bind(to: viewModel.nextTapped)
-            .disposed(by: disposeBag)
+    override func configureTarget() {
+        phoneNumberCertifyView.nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func nextButtonClicked() {
+        let vc = NicknameSettingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension PhoneNumberCertifyViewController {
-    func bindNavigation() {
-        
-    }
-}
