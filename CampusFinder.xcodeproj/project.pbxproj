@@ -54,7 +54,6 @@
 		01DAB2EF2CAE887E00E21D15 /* CFSelectRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */; };
 		01DAB2F22CAE94EA00E21D15 /* RoleCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F12CAE94EA00E21D15 /* RoleCertifyViewController.swift */; };
 		01DAB2F42CAE950500E21D15 /* RoleCertifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F32CAE950500E21D15 /* RoleCertifyView.swift */; };
-		01DAB2F62CAE979B00E21D15 /* CFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F52CAE979B00E21D15 /* CFTextField.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -141,7 +140,6 @@
 		01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSelectRoleView.swift; sourceTree = "<group>"; };
 		01DAB2F12CAE94EA00E21D15 /* RoleCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCertifyViewController.swift; sourceTree = "<group>"; };
 		01DAB2F32CAE950500E21D15 /* RoleCertifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCertifyView.swift; sourceTree = "<group>"; };
-		01DAB2F52CAE979B00E21D15 /* CFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFTextField.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
 				0103B22C2CA019910031314F /* CFSearchBar.swift */,
 				01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */,
-				01DAB2F52CAE979B00E21D15 /* CFTextField.swift */,
 				0103B2382CA168530031314F /* UserDefaultsKey.swift */,
 				0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */,
 			);
@@ -596,7 +593,6 @@
 				0103B2402CA17E770031314F /* SearchResultTableViewCell.swift in Sources */,
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
 				010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */,
-				01DAB2F62CAE979B00E21D15 /* CFTextField.swift in Sources */,
 				01D113252C820772006B20BB /* DetailCampusView.swift in Sources */,
 				0103B24D2CA7FBF30031314F /* DatePickerViewController.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
