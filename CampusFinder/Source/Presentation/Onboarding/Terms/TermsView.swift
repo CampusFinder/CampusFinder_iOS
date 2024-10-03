@@ -58,6 +58,8 @@ final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
         allSelectLabel.text = "모두 동의 (선택 정보 포함)"
         allSelectLabel.font = .pretendard(size: 16, weight: .medium)
         allSelectLabel.textColor = .black
+        
+        nextButton.isEnabled = false
     }
     
     override func configureConstraints() {
@@ -102,6 +104,13 @@ final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
     
     @objc private func selectAllButtonTapped() {
         isAllSelected.toggle()
+        
+        if isAllSelected {
+            allSelectButton.tintColor = CFColor.Primary.blue01
+        } else {
+            allSelectButton.tintColor = CFColor.black02
+        }
+        
         for index in terms.indices {
             terms[index].1 = isAllSelected
         }
@@ -115,9 +124,11 @@ final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
         if requiredSelections {
             nextButton.backgroundColor = CFColor.Primary.blue01
             nextButton.setTitleColor(.white, for: .normal)
+            nextButton.isEnabled = true
         } else {
             nextButton.backgroundColor = CFColor.Bg.gray03
             nextButton.setTitleColor(CFColor.black04, for: .normal)
+            nextButton.isEnabled = false
         }
     }
     
