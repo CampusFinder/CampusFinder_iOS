@@ -51,6 +51,10 @@
 		01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113222C820681006B20BB /* DetailCampusViewController.swift */; };
 		01D113252C820772006B20BB /* DetailCampusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D113242C820772006B20BB /* DetailCampusView.swift */; };
 		01DAB2ED2CAD672700E21D15 /* FindQuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2EC2CAD672700E21D15 /* FindQuestTableViewCell.swift */; };
+		01DAB2EF2CAE887E00E21D15 /* CFSelectRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */; };
+		01DAB2F22CAE94EA00E21D15 /* RoleCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F12CAE94EA00E21D15 /* RoleCertifyViewController.swift */; };
+		01DAB2F42CAE950500E21D15 /* RoleCertifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F32CAE950500E21D15 /* RoleCertifyView.swift */; };
+		01DAB2F62CAE979B00E21D15 /* CFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB2F52CAE979B00E21D15 /* CFTextField.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -71,7 +75,6 @@
 		01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EF2C688BAE0006B86F /* TermsViewModel.swift */; };
 		01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F32C68939B0006B86F /* SelectPositionViewController.swift */; };
 		01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F52C68940D0006B86F /* SelectPositionView.swift */; };
-		01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */; };
 		01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */; };
 		01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */; };
 		01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */; };
@@ -135,6 +138,10 @@
 		01D113222C820681006B20BB /* DetailCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusViewController.swift; sourceTree = "<group>"; };
 		01D113242C820772006B20BB /* DetailCampusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCampusView.swift; sourceTree = "<group>"; };
 		01DAB2EC2CAD672700E21D15 /* FindQuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindQuestTableViewCell.swift; sourceTree = "<group>"; };
+		01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSelectRoleView.swift; sourceTree = "<group>"; };
+		01DAB2F12CAE94EA00E21D15 /* RoleCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCertifyViewController.swift; sourceTree = "<group>"; };
+		01DAB2F32CAE950500E21D15 /* RoleCertifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCertifyView.swift; sourceTree = "<group>"; };
+		01DAB2F52CAE979B00E21D15 /* CFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFTextField.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +160,6 @@
 		01E408EF2C688BAE0006B86F /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
 		01E408F32C68939B0006B86F /* SelectPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionViewController.swift; sourceTree = "<group>"; };
 		01E408F52C68940D0006B86F /* SelectPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionView.swift; sourceTree = "<group>"; };
-		01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionViewModel.swift; sourceTree = "<group>"; };
 		01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewController.swift; sourceTree = "<group>"; };
 		01E408FC2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewModel.swift; sourceTree = "<group>"; };
 		01E408FE2C6899330006B86F /* PhoneNumberCertifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyView.swift; sourceTree = "<group>"; };
@@ -334,6 +340,15 @@
 			path = DetailCampus;
 			sourceTree = "<group>";
 		};
+		01DAB2F02CAE94CB00E21D15 /* RoleCertify */ = {
+			isa = PBXGroup;
+			children = (
+				01DAB2F12CAE94EA00E21D15 /* RoleCertifyViewController.swift */,
+				01DAB2F32CAE950500E21D15 /* RoleCertifyView.swift */,
+			);
+			path = RoleCertify;
+			sourceTree = "<group>";
+		};
 		01E4085D2C633C0E0006B86F = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				01E408F92C6898190006B86F /* PhoneNumberCertify */,
+				01DAB2F02CAE94CB00E21D15 /* RoleCertify */,
 				01E408F22C6893860006B86F /* SelectPosition */,
 				01E408EA2C68786E0006B86F /* Terms */,
 				01E408E92C678F850006B86F /* Login */,
@@ -421,6 +437,8 @@
 				010A09572C8DCFDE00B4AF6C /* CFAddPhotoView.swift */,
 				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
 				0103B22C2CA019910031314F /* CFSearchBar.swift */,
+				01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */,
+				01DAB2F52CAE979B00E21D15 /* CFTextField.swift */,
 				0103B2382CA168530031314F /* UserDefaultsKey.swift */,
 				0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */,
 			);
@@ -463,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				01E408F32C68939B0006B86F /* SelectPositionViewController.swift */,
-				01E408F72C68947F0006B86F /* SelectPositionViewModel.swift */,
 				01E408F52C68940D0006B86F /* SelectPositionView.swift */,
 			);
 			path = SelectPosition;
@@ -579,9 +596,9 @@
 				0103B2402CA17E770031314F /* SearchResultTableViewCell.swift in Sources */,
 				01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */,
 				010A09582C8DCFDE00B4AF6C /* CFAddPhotoView.swift in Sources */,
+				01DAB2F62CAE979B00E21D15 /* CFTextField.swift in Sources */,
 				01D113252C820772006B20BB /* DetailCampusView.swift in Sources */,
 				0103B24D2CA7FBF30031314F /* DatePickerViewController.swift in Sources */,
-				01E408F82C68947F0006B86F /* SelectPositionViewModel.swift in Sources */,
 				01E4088E2C633DC20006B86F /* BaseViewController.swift in Sources */,
 				01E408FD2C6898AC0006B86F /* PhoneNumberCertifyViewModel.swift in Sources */,
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
@@ -615,10 +632,12 @@
 				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
 				0103B25C2CAAC7ED0031314F /* ProfessorTableViewCell.swift in Sources */,
+				01DAB2F22CAE94EA00E21D15 /* RoleCertifyViewController.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */,
 				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
 				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,
+				01DAB2F42CAE950500E21D15 /* RoleCertifyView.swift in Sources */,
 				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
 				01DAB2ED2CAD672700E21D15 /* FindQuestTableViewCell.swift in Sources */,
 				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
@@ -634,6 +653,7 @@
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
 				0103B2532CAA95090031314F /* ChattingDummyData.swift in Sources */,
 				01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */,
+				01DAB2EF2CAE887E00E21D15 /* CFSelectRoleView.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
 				0103B2582CAAC0000031314F /* ProfessorTableViewController.swift in Sources */,
