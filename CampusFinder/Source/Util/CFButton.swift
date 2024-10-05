@@ -25,6 +25,7 @@ class CFButton {
         button.titleLabel?.font = .pretendard(size: 16, weight: .bold)
         button.backgroundColor = CFColor.Bg.gray03
         button.layer.cornerRadius = 10
+        button.isEnabled = false
         return button
     }
     
