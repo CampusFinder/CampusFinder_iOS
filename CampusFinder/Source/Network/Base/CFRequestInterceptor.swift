@@ -50,7 +50,7 @@ final class CFRequestInterceptor: RequestInterceptor {
                 switch result {
                 case .success(let data):
                     print("리프레쉬 토큰을 사용하여 토큰을 재발행하여 저장")
-                    UserDefaultsManager.shared.token = data.accessToken
+                    TokenManager.shared.token = data.accessToken
                     completion(true)
                 case .failure(let error):
                     print("리프레시 토큰 사용 실패: \(error)")
@@ -63,7 +63,7 @@ final class CFRequestInterceptor: RequestInterceptor {
                 completion(false)
             })
             .disposed(by: disposeBag)
-        }
+    }
     
     func logout() {
         UserDefaults.standard.removeObject(forKey: "access")
