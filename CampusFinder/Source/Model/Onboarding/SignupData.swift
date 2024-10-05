@@ -10,7 +10,9 @@ import Foundation
 class SignupData {
     static let shared = SignupData()
     
-    private init() {}
+    private init() {
+        reset()
+    }
 
     var role: String?
     var nickname: String?
