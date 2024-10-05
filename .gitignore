@@ -3,7 +3,6 @@
 
 .DS_Store
 APIUrl.swift
-APIKey.swift
 UserDefaultsKey.swift
 
 ### Swift ###
