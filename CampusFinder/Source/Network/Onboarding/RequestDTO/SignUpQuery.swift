@@ -11,7 +11,7 @@ import Foundation
 struct SignUpQuery: Encodable {
     let role: String
     let email: String
-    let phoneNumber: String
+    let phoneNum: String
     let password: String
     let nickname: String
     let univName: String
