@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: 로그인
 struct SignInQuery: Encodable {
-    let phoneNumber: String
+    let phoneNum: String
     let password: String
 }

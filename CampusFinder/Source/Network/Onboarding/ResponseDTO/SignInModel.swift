@@ -16,7 +16,6 @@ struct SignInModel: Decodable {
 }
 
 struct SignInResponse: Decodable {
-    let userIdx: Int
     let accessToken: String
     let refreshToken: String
 }
