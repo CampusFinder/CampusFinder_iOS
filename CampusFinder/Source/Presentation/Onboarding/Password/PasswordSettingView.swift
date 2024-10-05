@@ -16,6 +16,7 @@ class PasswordSettingView: BaseView {
     let passwordCheckTitle = UILabel()
     let passwordCheckTextField = UITextField()
     let passwordCheckLine = CALayer()
+    let matchingStatusLabel = UILabel()
     let nextButton = CFButton.grayButton(title: "가입하기")
     
     override func configureHierarchy() {
@@ -23,6 +24,7 @@ class PasswordSettingView: BaseView {
         addSubview(passwordTextField)
         addSubview(passwordCheckTitle)
         addSubview(passwordCheckTextField)
+        addSubview(matchingStatusLabel)
         addSubview(nextButton)
     }
     
@@ -54,9 +56,14 @@ class PasswordSettingView: BaseView {
         passwordCheckTextField.placeholder = "다시 비밀번호를 입력하세요"
         passwordCheckTextField.textAlignment = .left
         passwordCheckTextField.textColor = .black
+        passwordCheckTextField.isSecureTextEntry = true
         
         passwordCheckLine.backgroundColor = CFColor.Bg.gray04.cgColor
         passwordCheckTextField.layer.addSublayer(passwordCheckLine)
+        
+        matchingStatusLabel.font = .pretendard(size: 14, weight: .regular)
+        matchingStatusLabel.textColor = .black
+        matchingStatusLabel.textAlignment = .left
     }
     
     override func configureConstraints() {
@@ -77,6 +84,10 @@ class PasswordSettingView: BaseView {
             make.top.equalTo(passwordCheckTitle.snp.bottom).offset(12)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(40)
+        }
+        matchingStatusLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordCheckTextField.snp.bottom).offset(8)
+            make.leading.equalToSuperview().inset(16)
         }
         nextButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(60)

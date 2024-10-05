@@ -10,6 +10,7 @@ import SnapKit
 
 class NicknameSettingView: BaseView {
     let nicknameTitle = UILabel()
+    let nicknameDescription = UILabel()
     let nicknameTextField = UITextField()
     let nicknameLine = CALayer()
     let comfirmButton = UIButton()
@@ -18,6 +19,7 @@ class NicknameSettingView: BaseView {
     override func configureHierarchy() {
         addSubview(nicknameTitle)
         addSubview(nicknameTextField)
+        addSubview(nicknameDescription)
         addSubview(nextButton)
     }
     
@@ -40,6 +42,10 @@ class NicknameSettingView: BaseView {
         
         nicknameLine.backgroundColor = CFColor.Bg.gray04.cgColor
         nicknameTextField.layer.addSublayer(nicknameLine)
+        
+        nicknameDescription.text = "한글, 영문, 숫자 포함 8자 이내 (특수문자 불가능)"
+        nicknameDescription.font = .pretendard(size: 12, weight: .regular)
+        nicknameDescription.textColor = CFColor.black04
     }
     
     override func configureConstraints() {
@@ -51,6 +57,10 @@ class NicknameSettingView: BaseView {
             make.top.equalTo(nicknameTitle.snp.bottom).offset(12)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(40)
+        }
+        nicknameDescription.snp.makeConstraints { make in
+            make.top.equalTo(nicknameTextField.snp.bottom).offset(9)
+            make.horizontalEdges.equalToSuperview().inset(16)
         }
         nextButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(60)

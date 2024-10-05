@@ -12,7 +12,6 @@ class RoleCertifyView: BaseView {
     let campusTitle = UILabel()
     let campusTextField = UITextField()
     let campusLine = CALayer()
-    let campusButton = UIButton()
     let emailTitle = UILabel()
     let emailTextField = UITextField()
     let emailLine = CALayer()
@@ -39,16 +38,9 @@ class RoleCertifyView: BaseView {
         campusTitle.textColor = .black
         
         campusTextField.backgroundColor = .clear
-        campusTextField.placeholder = "학교를 입력하세요"
+        campusTextField.placeholder = "ex) 세종대학교"
         campusTextField.textAlignment = .left
         campusTextField.textColor = .black
-        
-        campusButton.setTitle("확인", for: .normal)
-        campusButton.setTitleColor(CFColor.black02, for: .normal)
-        campusButton.titleLabel?.font = .pretendard(size: 16, weight: .medium)
-
-        campusTextField.rightView = campusButton
-        campusTextField.rightViewMode = .always
         
         campusLine.backgroundColor = CFColor.Bg.gray04.cgColor
         campusTextField.layer.addSublayer(campusLine)
@@ -62,7 +54,7 @@ class RoleCertifyView: BaseView {
         emailTextField.textAlignment = .left
         emailTextField.textColor = .black
         
-        emailButton.setTitle("확인", for: .normal)
+        emailButton.setTitle("전송", for: .normal)
         emailButton.setTitleColor(CFColor.black02, for: .normal)
         emailButton.titleLabel?.font = .pretendard(size: 16, weight: .medium)
 

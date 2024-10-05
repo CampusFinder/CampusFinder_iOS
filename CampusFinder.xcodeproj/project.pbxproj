@@ -72,6 +72,19 @@
 		01DAB3202CAFE86500E21D15 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB31F2CAFE86500E21D15 /* SignUpModel.swift */; };
 		01DAB3222CAFE86D00E21D15 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3212CAFE86D00E21D15 /* SignInModel.swift */; };
 		01DAB3252CB116D800E21D15 /* RefreshModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3242CB116D800E21D15 /* RefreshModel.swift */; };
+		01DAB3272CB134DF00E21D15 /* EmailSendQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3262CB134DF00E21D15 /* EmailSendQuery.swift */; };
+		01DAB3292CB1351800E21D15 /* EmailSendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3282CB1351800E21D15 /* EmailSendModel.swift */; };
+		01DAB32B2CB13B2400E21D15 /* EmailVerifyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB32A2CB13B2400E21D15 /* EmailVerifyQuery.swift */; };
+		01DAB32D2CB13B3C00E21D15 /* EmailVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB32C2CB13B3C00E21D15 /* EmailVerifyModel.swift */; };
+		01DAB32F2CB15CC800E21D15 /* SMSSendQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB32E2CB15CC800E21D15 /* SMSSendQuery.swift */; };
+		01DAB3312CB15E0300E21D15 /* SMSSendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3302CB15E0300E21D15 /* SMSSendModel.swift */; };
+		01DAB3332CB161B500E21D15 /* SMSVerifyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3322CB161B500E21D15 /* SMSVerifyQuery.swift */; };
+		01DAB3352CB161E500E21D15 /* SMSVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3342CB161E500E21D15 /* SMSVerifyModel.swift */; };
+		01DAB3372CB16F7900E21D15 /* NicknameVerifyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3362CB16F7900E21D15 /* NicknameVerifyQuery.swift */; };
+		01DAB3392CB16FC100E21D15 /* NicknameVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3382CB16FC100E21D15 /* NicknameVerifyModel.swift */; };
+		01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33A2CB179CE00E21D15 /* PasswordVerifyQuery.swift */; };
+		01DAB33D2CB17A6E00E21D15 /* PasswordVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33C2CB17A6E00E21D15 /* PasswordVerifyModel.swift */; };
+		01DAB3402CB1828400E21D15 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -86,7 +99,6 @@
 		01E408902C633DEA0006B86F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4088F2C633DEA0006B86F /* BaseView.swift */; };
 		01E408E32C6783290006B86F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E22C6783290006B86F /* LoginView.swift */; };
 		01E408E62C6785590006B86F /* CFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E52C6785590006B86F /* CFButton.swift */; };
-		01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E72C67867F0006B86F /* LoginViewModel.swift */; };
 		01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EB2C68788B0006B86F /* TermsViewController.swift */; };
 		01E408EE2C688B910006B86F /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408ED2C688B910006B86F /* TermsView.swift */; };
 		01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EF2C688BAE0006B86F /* TermsViewModel.swift */; };
@@ -174,6 +186,19 @@
 		01DAB31F2CAFE86500E21D15 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		01DAB3212CAFE86D00E21D15 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		01DAB3242CB116D800E21D15 /* RefreshModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshModel.swift; sourceTree = "<group>"; };
+		01DAB3262CB134DF00E21D15 /* EmailSendQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSendQuery.swift; sourceTree = "<group>"; };
+		01DAB3282CB1351800E21D15 /* EmailSendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSendModel.swift; sourceTree = "<group>"; };
+		01DAB32A2CB13B2400E21D15 /* EmailVerifyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyQuery.swift; sourceTree = "<group>"; };
+		01DAB32C2CB13B3C00E21D15 /* EmailVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyModel.swift; sourceTree = "<group>"; };
+		01DAB32E2CB15CC800E21D15 /* SMSSendQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSSendQuery.swift; sourceTree = "<group>"; };
+		01DAB3302CB15E0300E21D15 /* SMSSendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSSendModel.swift; sourceTree = "<group>"; };
+		01DAB3322CB161B500E21D15 /* SMSVerifyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSVerifyQuery.swift; sourceTree = "<group>"; };
+		01DAB3342CB161E500E21D15 /* SMSVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSVerifyModel.swift; sourceTree = "<group>"; };
+		01DAB3362CB16F7900E21D15 /* NicknameVerifyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameVerifyQuery.swift; sourceTree = "<group>"; };
+		01DAB3382CB16FC100E21D15 /* NicknameVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameVerifyModel.swift; sourceTree = "<group>"; };
+		01DAB33A2CB179CE00E21D15 /* PasswordVerifyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerifyQuery.swift; sourceTree = "<group>"; };
+		01DAB33C2CB17A6E00E21D15 /* PasswordVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerifyModel.swift; sourceTree = "<group>"; };
+		01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,7 +211,6 @@
 		01E4088F2C633DEA0006B86F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		01E408E22C6783290006B86F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		01E408E52C6785590006B86F /* CFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFButton.swift; sourceTree = "<group>"; };
-		01E408E72C67867F0006B86F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		01E408EB2C68788B0006B86F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		01E408ED2C688B910006B86F /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		01E408EF2C688BAE0006B86F /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
@@ -452,6 +476,12 @@
 		01DAB3192CAFE78100E21D15 /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
+				01DAB33A2CB179CE00E21D15 /* PasswordVerifyQuery.swift */,
+				01DAB3362CB16F7900E21D15 /* NicknameVerifyQuery.swift */,
+				01DAB3322CB161B500E21D15 /* SMSVerifyQuery.swift */,
+				01DAB32E2CB15CC800E21D15 /* SMSSendQuery.swift */,
+				01DAB32A2CB13B2400E21D15 /* EmailVerifyQuery.swift */,
+				01DAB3262CB134DF00E21D15 /* EmailSendQuery.swift */,
 				01DAB31B2CAFE7B400E21D15 /* SignInQuery.swift */,
 				01DAB31D2CAFE7F000E21D15 /* SignUpQuery.swift */,
 			);
@@ -461,6 +491,12 @@
 		01DAB31A2CAFE78800E21D15 /* ResponseDTO */ = {
 			isa = PBXGroup;
 			children = (
+				01DAB33C2CB17A6E00E21D15 /* PasswordVerifyModel.swift */,
+				01DAB3382CB16FC100E21D15 /* NicknameVerifyModel.swift */,
+				01DAB3342CB161E500E21D15 /* SMSVerifyModel.swift */,
+				01DAB3302CB15E0300E21D15 /* SMSSendModel.swift */,
+				01DAB32C2CB13B3C00E21D15 /* EmailVerifyModel.swift */,
+				01DAB3282CB1351800E21D15 /* EmailSendModel.swift */,
 				01DAB3212CAFE86D00E21D15 /* SignInModel.swift */,
 				01DAB31F2CAFE86500E21D15 /* SignUpModel.swift */,
 			);
@@ -473,6 +509,14 @@
 				01DAB3242CB116D800E21D15 /* RefreshModel.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		01DAB33E2CB1825B00E21D15 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		01E4085D2C633C0E0006B86F = {
@@ -543,6 +587,7 @@
 		01E408952C633E4B0006B86F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				01DAB33E2CB1825B00E21D15 /* Welcome */,
 				01DAB2FC2CAED3AD00E21D15 /* Password */,
 				01DAB2F72CAECF6800E21D15 /* Nickname */,
 				01E408F92C6898190006B86F /* PhoneNumberCertify */,
@@ -577,7 +622,6 @@
 			isa = PBXGroup;
 			children = (
 				01E4088A2C633D5A0006B86F /* LoginViewController.swift */,
-				01E408E72C67867F0006B86F /* LoginViewModel.swift */,
 				01E408E22C6783290006B86F /* LoginView.swift */,
 			);
 			path = Login;
@@ -732,6 +776,7 @@
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
 				0103B2292CA017660031314F /* SearchViewController.swift in Sources */,
 				01DAB3152CAFE33600E21D15 /* APIUrl.swift in Sources */,
+				01DAB32F2CB15CC800E21D15 /* SMSSendQuery.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
 				01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */,
@@ -749,6 +794,7 @@
 				012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */,
 				01DAB30D2CAFE0B500E21D15 /* CFRequestInterceptor.swift in Sources */,
 				010A096A2C8EFE1600B4AF6C /* CFPriceView.swift in Sources */,
+				01DAB32B2CB13B2400E21D15 /* EmailVerifyQuery.swift in Sources */,
 				01DAB3202CAFE86500E21D15 /* SignUpModel.swift in Sources */,
 				0103B23E2CA17B290031314F /* SearchResultTableViewController.swift in Sources */,
 				0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */,
@@ -759,6 +805,8 @@
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
 				0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */,
 				0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */,
+				01DAB32D2CB13B3C00E21D15 /* EmailVerifyModel.swift in Sources */,
+				01DAB3332CB161B500E21D15 /* SMSVerifyQuery.swift in Sources */,
 				01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */,
 				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
@@ -768,7 +816,6 @@
 				01DAB3132CAFE1F800E21D15 /* Router.swift in Sources */,
 				01DAB2FE2CAED3C000E21D15 /* PasswordSettingViewController.swift in Sources */,
 				0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */,
-				01E408E82C67867F0006B86F /* LoginViewModel.swift in Sources */,
 				01D113072C81C5B7006B20BB /* UIFont+.swift in Sources */,
 				01DAB3222CAFE86D00E21D15 /* SignInModel.swift in Sources */,
 				01DAB2F42CAE950500E21D15 /* RoleCertifyView.swift in Sources */,
@@ -779,28 +826,37 @@
 				01E409122C6A08950006B86F /* UIColor+.swift in Sources */,
 				01DAB31C2CAFE7B400E21D15 /* SignInQuery.swift in Sources */,
 				01D112F62C81B81F006B20BB /* CFColor.swift in Sources */,
+				01DAB3292CB1351800E21D15 /* EmailSendModel.swift in Sources */,
+				01DAB3352CB161E500E21D15 /* SMSVerifyModel.swift in Sources */,
 				01D1131E2C81F278006B20BB /* FindStudentTableViewCell.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
 				01DAB3042CAFDA0B00E21D15 /* SignupData.swift in Sources */,
 				01E408E62C6785590006B86F /* CFButton.swift in Sources */,
+				01DAB3402CB1828400E21D15 /* WelcomeViewController.swift in Sources */,
 				01D112AC2C7B5AA7006B20BB /* ProfileViewController.swift in Sources */,
 				01D112F82C81BC32006B20BB /* UITextField+.swift in Sources */,
 				01DAB30B2CAFDE6000E21D15 /* HTTPHeaderField.swift in Sources */,
 				0103B2562CAABF700031314F /* ProfessorViewController.swift in Sources */,
 				01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */,
 				0103B2532CAA95090031314F /* ChattingDummyData.swift in Sources */,
+				01DAB3312CB15E0300E21D15 /* SMSSendModel.swift in Sources */,
 				01D1130F2C81E2D7006B20BB /* FindCampusViewController.swift in Sources */,
 				01DAB2EF2CAE887E00E21D15 /* CFSelectRoleView.swift in Sources */,
+				01DAB3392CB16FC100E21D15 /* NicknameVerifyModel.swift in Sources */,
+				01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */,
 				01DAB31E2CAFE7F000E21D15 /* SignUpQuery.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
 				0103B2582CAAC0000031314F /* ProfessorTableViewController.swift in Sources */,
+				01DAB3272CB134DF00E21D15 /* EmailSendQuery.swift in Sources */,
 				01DAB30F2CAFE14100E21D15 /* TokenManager.swift in Sources */,
 				01DAB3252CB116D800E21D15 /* RefreshModel.swift in Sources */,
+				01DAB33D2CB17A6E00E21D15 /* PasswordVerifyModel.swift in Sources */,
 				01DAB3112CAFE1B200E21D15 /* NetworkManager.swift in Sources */,
 				01E409032C68DE3D0006B86F /* HomeView.swift in Sources */,
+				01DAB3372CB16F7900E21D15 /* NicknameVerifyQuery.swift in Sources */,
 				01DAB2FB2CAECFFF00E21D15 /* NicknameSettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

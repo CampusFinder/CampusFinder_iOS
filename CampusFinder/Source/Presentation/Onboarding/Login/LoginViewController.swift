@@ -15,7 +15,6 @@ final class LoginViewController: BaseViewController {
     }
     
     private let loginView = LoginView()
-    var viewModel = LoginViewModel()
     
     override func loadView() {
         self.view = loginView
@@ -23,37 +22,44 @@ final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
-        bindNavigation()
     }
     
-    func bindViewModel() {
-        loginView.loginButton.rx.tap
-            .bind(to: viewModel.logInTapped)
-            .disposed(by: disposeBag)
+    override func configureTarget() {
+        loginView.joinButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         
-        loginView.joinButton.rx.tap
-            .bind(to: viewModel.joinTapped)
-            .disposed(by: disposeBag)
+        loginView.loginButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
     }
-}
-
-extension LoginViewController {
-    func bindNavigation() {
-        viewModel.navigateToMain
-            .bind(with: self) { owner, _ in
-                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                let sceneDelegate = windowScene?.delegate as? SceneDelegate
-                let rootVC = TabBarController()
-                sceneDelegate?.window?.rootViewController = rootVC
-                sceneDelegate?.window?.makeKeyAndVisible()
-            }
-            .disposed(by: disposeBag)
+    
+    @objc func signUpButtonClicked() {
+        let vc = TermsViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func signInButtonClicked() {
+        guard let phoneNum = loginView.phoneNumberField.text,
+              let password = loginView.passwordField.text else {
+            return
+        }
         
-        viewModel.navigateToTerms
-            .bind(with: self) { owner, _ in
-                owner.navigationController?.pushViewController(TermsViewController(), animated: true)
+        NetworkManager.shared.login(phoneNumber: phoneNum, password: password) { [weak self] isSuccess in
+            DispatchQueue.main.async {
+                if isSuccess {
+                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                    let rootVC = TabBarController()
+                    sceneDelegate?.window?.rootViewController = rootVC
+                    sceneDelegate?.window?.makeKeyAndVisible()
+                } else {
+                    self?.showAlert()
+                }
             }
-            .disposed(by: disposeBag)
+        }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "로그인에 실패했습니다", message: "다시 시도해주세요.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }

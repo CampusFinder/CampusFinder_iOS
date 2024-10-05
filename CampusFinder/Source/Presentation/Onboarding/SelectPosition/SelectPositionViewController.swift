@@ -34,11 +34,13 @@ final class SelectPositionViewController: BaseViewController {
         let vc = RoleCertifyViewController()
         vc.navigationItem.title = "학생 학력인증"
         navigationController?.pushViewController(vc, animated: true)
+        SignupData.shared.role = "STUDENT"
     }
     
     @objc func professorButtonClicked() {
         let vc = RoleCertifyViewController()
         vc.navigationItem.title = "교수 인증"
         navigationController?.pushViewController(vc, animated: true)
+        SignupData.shared.role = "PROFESSOR"
     }
 }
