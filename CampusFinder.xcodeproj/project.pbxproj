@@ -1004,6 +1004,7 @@
 				DEVELOPMENT_TEAM = 7S6PH8TVFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampusFinder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "캠파";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1037,6 +1038,7 @@
 				DEVELOPMENT_TEAM = 7S6PH8TVFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampusFinder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "캠파";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
