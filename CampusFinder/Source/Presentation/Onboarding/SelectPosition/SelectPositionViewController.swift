@@ -15,7 +15,6 @@ final class SelectPositionViewController: BaseViewController {
     }
     
     private let selectPositionView = SelectPositionView()
-    var viewModel = SelectPositionViewModel()
     
     override func loadView() {
         self.view = selectPositionView
@@ -23,23 +22,25 @@ final class SelectPositionViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
-        bindNavigation()
     }
     
-    func bindViewModel() {
-        selectPositionView.nextButton.rx.tap
-            .bind(to: viewModel.nextTapped)
-            .disposed(by: disposeBag)
+    override func configureTarget() {
+        selectPositionView.selectStudentButton.addTarget(self, action: #selector(studentButtonClicked), for: .touchUpInside)
+        
+        selectPositionView.selectProfessorButton.addTarget(self, action: #selector(professorButtonClicked), for: .touchUpInside)
     }
-}
-
-extension SelectPositionViewController {
-    func bindNavigation() {
-        viewModel.navigateToPhoneNumberCertify
-            .bind(with: self) { owner, _ in
-                owner.navigationController?.pushViewController(PhoneNumberCertifyViewController(), animated: true)
-            }
-            .disposed(by: disposeBag)
+    
+    @objc func studentButtonClicked() {
+        let vc = RoleCertifyViewController()
+        vc.navigationItem.title = "학생 학력인증"
+        navigationController?.pushViewController(vc, animated: true)
+        SignupData.shared.role = "STUDENT"
+    }
+    
+    @objc func professorButtonClicked() {
+        let vc = RoleCertifyViewController()
+        vc.navigationItem.title = "교수 인증"
+        navigationController?.pushViewController(vc, animated: true)
+        SignupData.shared.role = "PROFESSOR"
     }
 }

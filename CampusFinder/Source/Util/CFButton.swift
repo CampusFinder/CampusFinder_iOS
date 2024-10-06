@@ -18,6 +18,17 @@ class CFButton {
         return button
     }
     
+    static func grayButton(title: String) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(CFColor.black04, for: .normal)
+        button.titleLabel?.font = .pretendard(size: 16, weight: .bold)
+        button.backgroundColor = CFColor.Bg.gray03
+        button.layer.cornerRadius = 10
+        button.isEnabled = false
+        return button
+    }
+    
     static func writingButton(title: String) -> UIButton {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "plus"), for: .normal)

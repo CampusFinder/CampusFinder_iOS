@@ -45,13 +45,19 @@ final class HomeViewController: BaseViewController {
         homeView.findCollectionView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     @objc func searchButtonClicked() {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func professorButtonClicked() {
-        print(#function)
+        let vc = ProfessorViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

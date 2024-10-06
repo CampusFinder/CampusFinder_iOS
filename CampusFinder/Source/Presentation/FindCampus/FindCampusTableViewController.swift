@@ -13,9 +13,9 @@ final class FindCampusTableViewController: UITableViewController {
         print("deinit \(self)")
     }
     
-    var category: CategoryCase
+    var category: FinderCase
     
-    init(category: CategoryCase) {
+    init(category: FinderCase) {
         self.category = category
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,8 +27,8 @@ final class FindCampusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(FindCampusTableViewCell.self, forCellReuseIdentifier: "FindCampusTableViewCell")
-        tableView.rowHeight = 133
+        tableView.register(FindStudentTableViewCell.self, forCellReuseIdentifier: "FindStudentTableViewCell")
+        tableView.register(FindQuestTableViewCell.self, forCellReuseIdentifier: "FindQuestTableViewCell")
         
         setupHeaderView()
     }
@@ -53,12 +53,12 @@ final class FindCampusTableViewController: UITableViewController {
             print("높은 가격순으로 정렬")
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-
+        
         actionSheet.addAction(latestAction)
         actionSheet.addAction(lowPriceAction)
         actionSheet.addAction(highPriceAction)
         actionSheet.addAction(cancelAction)
-
+        
         present(actionSheet, animated: true, completion: nil)
     }
     
@@ -67,12 +67,32 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindCampusTableViewCell", for: indexPath) as? FindCampusTableViewCell else {
-            return UITableViewCell()
-        }
         let data = category.dummyData[indexPath.row]
-        cell.configure(with: data)
-        return cell
+        
+        switch category {
+        case .student:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindStudentTableViewCell", for: indexPath) as? FindStudentTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: data)
+            return cell
+            
+        case .request:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindQuestTableViewCell", for: indexPath) as? FindQuestTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: data)
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch category {
+        case .student:
+            return 133
+        case .request:
+            return 150
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

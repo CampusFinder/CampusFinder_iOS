@@ -22,7 +22,7 @@ final class SearchResultViewController: BaseViewController {
     let tabManVC = TabmanViewController()
     
     private lazy var viewControllers: [UIViewController] = {
-        return CategoryCase.allCases.map { SearchResultTableViewController(category: $0) }
+        return FinderCase.allCases.map { SearchResultTableViewController(category: $0) }
     }()
     
     init(searchQuery: String) {
@@ -103,7 +103,7 @@ extension SearchResultViewController: PageboyViewControllerDataSource, TMBarData
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        let title = CategoryCase.allCases[index].rawValue
+        let title = FinderCase.allCases[index].rawValue
         return TMBarItem(title: title)
     }
 }
