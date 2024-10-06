@@ -85,6 +85,7 @@
 		01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33A2CB179CE00E21D15 /* PasswordVerifyQuery.swift */; };
 		01DAB33D2CB17A6E00E21D15 /* PasswordVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33C2CB17A6E00E21D15 /* PasswordVerifyModel.swift */; };
 		01DAB3402CB1828400E21D15 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */; };
+		01DAB3422CB277AE00E21D15 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3412CB277AE00E21D15 /* WelcomeView.swift */; };
 		01E4086A2C633C0E0006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408692C633C0E0006B86F /* AppDelegate.swift */; };
 		01E4086C2C633C0E0006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4086B2C633C0E0006B86F /* SceneDelegate.swift */; };
 		01E408732C633C100006B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E408722C633C100006B86F /* Assets.xcassets */; };
@@ -101,7 +102,6 @@
 		01E408E62C6785590006B86F /* CFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408E52C6785590006B86F /* CFButton.swift */; };
 		01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EB2C68788B0006B86F /* TermsViewController.swift */; };
 		01E408EE2C688B910006B86F /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408ED2C688B910006B86F /* TermsView.swift */; };
-		01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408EF2C688BAE0006B86F /* TermsViewModel.swift */; };
 		01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F32C68939B0006B86F /* SelectPositionViewController.swift */; };
 		01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408F52C68940D0006B86F /* SelectPositionView.swift */; };
 		01E408FB2C6898300006B86F /* PhoneNumberCertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */; };
@@ -199,6 +199,7 @@
 		01DAB33A2CB179CE00E21D15 /* PasswordVerifyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerifyQuery.swift; sourceTree = "<group>"; };
 		01DAB33C2CB17A6E00E21D15 /* PasswordVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerifyModel.swift; sourceTree = "<group>"; };
 		01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		01DAB3412CB277AE00E21D15 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		01E408662C633C0E0006B86F /* CampusFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E408692C633C0E0006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E4086B2C633C0E0006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		01E408E52C6785590006B86F /* CFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFButton.swift; sourceTree = "<group>"; };
 		01E408EB2C68788B0006B86F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		01E408ED2C688B910006B86F /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
-		01E408EF2C688BAE0006B86F /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
 		01E408F32C68939B0006B86F /* SelectPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionViewController.swift; sourceTree = "<group>"; };
 		01E408F52C68940D0006B86F /* SelectPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPositionView.swift; sourceTree = "<group>"; };
 		01E408FA2C6898300006B86F /* PhoneNumberCertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCertifyViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAB33F2CB1828400E21D15 /* WelcomeViewController.swift */,
+				01DAB3412CB277AE00E21D15 /* WelcomeView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -631,7 +632,6 @@
 			isa = PBXGroup;
 			children = (
 				01E408EB2C68788B0006B86F /* TermsViewController.swift */,
-				01E408EF2C688BAE0006B86F /* TermsViewModel.swift */,
 				01E408ED2C688B910006B86F /* TermsView.swift */,
 				0103B25D2CABDF9F0031314F /* TermsTableViewCell.swift */,
 			);
@@ -778,10 +778,10 @@
 				01DAB3152CAFE33600E21D15 /* APIUrl.swift in Sources */,
 				01DAB32F2CB15CC800E21D15 /* SMSSendQuery.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
-				01E408F02C688BAE0006B86F /* TermsViewModel.swift in Sources */,
 				01D113232C820681006B20BB /* DetailCampusViewController.swift in Sources */,
 				01D112FA2C81BD52006B20BB /* CFLine.swift in Sources */,
 				01E408F62C68940D0006B86F /* SelectPositionView.swift in Sources */,
+				01DAB3422CB277AE00E21D15 /* WelcomeView.swift in Sources */,
 				012C428C2C88B26500C78861 /* WriteRequestViewController.swift in Sources */,
 				0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */,
 				0103B25A2CAAC06B0031314F /* CategoryCase.swift in Sources */,

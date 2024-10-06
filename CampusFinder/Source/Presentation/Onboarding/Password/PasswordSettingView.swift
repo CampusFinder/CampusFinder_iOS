@@ -37,6 +37,7 @@ class PasswordSettingView: BaseView {
         passwordTextField.placeholder = "비밀번호를 입력하세요"
         passwordTextField.textAlignment = .left
         passwordTextField.textColor = .black
+        passwordTextField.isSecureTextEntry = true
         
         passwordButton.setTitle("확인", for: .normal)
         passwordButton.setTitleColor(CFColor.black02, for: .normal)
