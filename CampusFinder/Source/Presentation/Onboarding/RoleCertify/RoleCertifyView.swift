@@ -53,6 +53,7 @@ class RoleCertifyView: BaseView {
         emailTextField.placeholder = "학교 이메일을 입력하세요"
         emailTextField.textAlignment = .left
         emailTextField.textColor = .black
+        emailTextField.keyboardType = .emailAddress
         
         emailButton.setTitle("전송", for: .normal)
         emailButton.setTitleColor(CFColor.black02, for: .normal)
@@ -72,6 +73,7 @@ class RoleCertifyView: BaseView {
         certifyNumberTextField.placeholder = "인증번호를 입력하세요"
         certifyNumberTextField.textAlignment = .left
         certifyNumberTextField.textColor = .black
+        certifyNumberTextField.keyboardType = .numberPad
         
         certifyNumberButton.setTitle("확인", for: .normal)
         certifyNumberButton.setTitleColor(CFColor.black02, for: .normal)

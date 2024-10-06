@@ -35,6 +35,7 @@ class PhoneNumberCertifyView: BaseView {
         phoneNumberTextField.placeholder = "휴대폰 번호를 입력하세요"
         phoneNumberTextField.textAlignment = .left
         phoneNumberTextField.textColor = .black
+        phoneNumberTextField.keyboardType = .numberPad
         
         sendButton.setTitle("전송", for: .normal)
         sendButton.setTitleColor(CFColor.black02, for: .normal)
