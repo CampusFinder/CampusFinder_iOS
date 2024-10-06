@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
-    
+    var terms: [(String, Bool)]
     let termsTitle = UILabel()
     let allSelectButton = UIButton()
     let allSelectLabel = UILabel()
@@ -17,23 +17,48 @@ final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
     let tableView = UITableView()
     let nextButton = CFButton.grayButton(title: "다음")
     
-    private var isAllSelected = false
-    
-    private var terms: [(String, Bool)] = [
-        ("만 14세 이상입니다. (필수)", false),
-        ("이용약관 동의 (필수)", false),
-        ("개인정보 처리방침 동의 (필수)", false),
-        ("위치정보 이용 동의 (선택)", false),
-        ("마케팅 정보 수신 동의 (선택)", false)
-    ]
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        self.terms = [
+            ("만 14세 이상입니다. (필수)", false),
+            ("이용약관 동의 (필수)", false),
+            ("개인정보 처리방침 동의 (필수)", false),
+            ("위치정보 이용 동의 (선택)", false),
+            ("마케팅 정보 수신 동의 (선택)", false)
+        ]
+        super.init(frame: .zero)
         configureTableView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateNextButton(isEnabled: Bool) {
+        nextButton.isEnabled = isEnabled
+        nextButton.backgroundColor = isEnabled ? CFColor.Primary.blue01 : CFColor.Bg.gray03
+        nextButton.setTitleColor(isEnabled ? .white : CFColor.black04, for: .normal)
+    }
+    
+    @objc private func checkButtonTappedFromCell(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? TermsTableViewCell,
+              let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        terms[indexPath.row].1.toggle()
+        tableView.reloadRows(at: [indexPath], with: .none)
+        
+        let allSelected = terms.allSatisfy { $0.1 }
+        allSelectButton.tintColor = allSelected ? CFColor.Primary.blue01 : CFColor.black02
+        updateNextButton(isEnabled: terms[0...2].allSatisfy { $0.1 })
+    }
+    
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.isScrollEnabled = false
+        tableView.register(TermsTableViewCell.self, forCellReuseIdentifier: "TermsCell")
+        tableView.rowHeight = 44
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = CFColor.Bg.gray01
     }
     
     override func configureHierarchy() {
@@ -98,84 +123,17 @@ final class TermsView: BaseView, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    override func configureAddTarget() {
-        allSelectButton.addTarget(self, action: #selector(selectAllButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func selectAllButtonTapped() {
-        isAllSelected.toggle()
-        
-        if isAllSelected {
-            allSelectButton.tintColor = CFColor.Primary.blue01
-        } else {
-            allSelectButton.tintColor = CFColor.black02
-        }
-        
-        for index in terms.indices {
-            terms[index].1 = isAllSelected
-        }
-        tableView.reloadData()
-        updateNextButtonState()
-    }
-    
-    @objc private func updateNextButtonState() {
-        let requiredSelections = terms[0...2].allSatisfy { $0.1 }
-        
-        if requiredSelections {
-            nextButton.backgroundColor = CFColor.Primary.blue01
-            nextButton.setTitleColor(.white, for: .normal)
-            nextButton.isEnabled = true
-        } else {
-            nextButton.backgroundColor = CFColor.Bg.gray03
-            nextButton.setTitleColor(CFColor.black04, for: .normal)
-            nextButton.isEnabled = false
-        }
-    }
-    
-    private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.isScrollEnabled = false
-        tableView.register(TermsTableViewCell.self, forCellReuseIdentifier: "TermsCell")
-        tableView.rowHeight = 44
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = CFColor.Bg.gray01
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return terms.count
+        return self.terms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TermsCell", for: indexPath) as? TermsTableViewCell else {
             return UITableViewCell()
         }
-        cell.backgroundColor = CFColor.Bg.gray01
-        cell.selectionStyle = .none
-        
-        let term = terms[indexPath.row].0
-        let isSelected = terms[indexPath.row].1
-        cell.configure(with: term)
-        
-        if isSelected {
-            cell.checkButton.tintColor = CFColor.Primary.blue01
-        } else {
-            cell.checkButton.tintColor = CFColor.black02
-        }
-
-        cell.checkButton.addTarget(self, action: #selector(checkButtonTapped(_:)), for: .touchUpInside)
-        
+        let term = self.terms[indexPath.row]
+        cell.configure(with: term.0, isSelected: term.1)
+        cell.checkButton.addTarget(self, action: #selector(checkButtonTappedFromCell(_:)), for: .touchUpInside)
         return cell
-    }
-    
-    @objc private func checkButtonTapped(_ sender: UIButton) {
-        guard let cell = sender.superview?.superview as? TermsTableViewCell,
-              let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        terms[indexPath.row].1.toggle()
-        
-        tableView.reloadRows(at: [indexPath], with: .none)
-        
-        updateNextButtonState()
     }
 }

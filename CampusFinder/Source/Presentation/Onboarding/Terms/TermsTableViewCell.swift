@@ -74,7 +74,8 @@ final class TermsTableViewCell: BaseTableViewCell {
         print("보기 버튼 클릭됨")
     }
     
-    func configure(with title: String) {
+    func configure(with title: String, isSelected: Bool) {
         titleLabel.text = title
+        checkButton.tintColor = isSelected ? CFColor.Primary.blue01 : CFColor.black02
     }
 }
