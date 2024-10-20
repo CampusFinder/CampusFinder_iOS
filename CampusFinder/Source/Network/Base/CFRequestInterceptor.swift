@@ -45,7 +45,7 @@ final class CFRequestInterceptor: RequestInterceptor {
     
     func refreshToken(completion: @escaping (Bool) -> Void) {
         print("토큰 재발급 시작")
-        NetworkManager.shared.postRefreshToken()
+        RefreshTokenManager.shared.postRefreshToken()
             .subscribe(onNext: { result in
                 switch result {
                 case .success(let data):
