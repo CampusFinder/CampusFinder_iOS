@@ -17,6 +17,7 @@ enum Router {
     case smsVerify(query: SMSVerifyQuery)
     case nicknameVerify(query: NicknameVerifyQuery)
     case passwordVerify(query: PasswordVerifyQuery)
+    case listStudentPost(categoryType: String)
     case refresh
 }
 
@@ -41,6 +42,8 @@ extension Router: TargetType {
             return .post
         case .refresh:
             return .get
+        case .listStudentPost:
+            return .get
         }
     }
     
@@ -49,7 +52,12 @@ extension Router: TargetType {
     }
     
     var queryItems: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .listStudentPost(let categoryType):
+            return [URLQueryItem(name: "categoryType", value: categoryType)]
+        default:
+            return nil
+        }
     }
     
     var body: Data? {
@@ -107,6 +115,8 @@ extension Router: TargetType {
             return "/api/signup/password-check"
         case .refresh:
             return "/auth/refresh"
+        case .listStudentPost:
+            return "/api/student-board/list"
         }
     }
     
@@ -144,11 +154,17 @@ extension Router: TargetType {
             return [
                 Header.contentType.rawValue: Header.json.rawValue,
             ]
+        case .listStudentPost:
+            return [
+                Header.authorization.rawValue: TokenManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: TokenManager.shared.refreshToken
+            ]
         case .refresh:
             return [
                 Header.authorization.rawValue: TokenManager.shared.token,
                 Header.contentType.rawValue: Header.json.rawValue,
-                Header.refresh.rawValue: TokenManager.shared.refreshToken,
+                Header.refresh.rawValue: TokenManager.shared.refreshToken
             ]
         }
     }

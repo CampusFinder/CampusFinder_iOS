@@ -35,7 +35,6 @@
 		012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */; };
 		019E04402CB96B2E008753E9 /* StudentPostNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */; };
 		019E04602CC4DFEB008753E9 /* RefreshTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E045F2CC4DFEB008753E9 /* RefreshTokenManager.swift */; };
-		019E04662CC4E4DC008753E9 /* ListStudentPostQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E04652CC4E4DB008753E9 /* ListStudentPostQuery.swift */; };
 		019E04682CC4E537008753E9 /* ListStudentPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E04672CC4E537008753E9 /* ListStudentPostModel.swift */; };
 		01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A52C7B5A31006B20BB /* TabBarViewController.swift */; };
 		01D112A92C7B5A93006B20BB /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A82C7B5A93006B20BB /* ChattingViewController.swift */; };
@@ -146,7 +145,6 @@
 		012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioView.swift; sourceTree = "<group>"; };
 		019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPostNetworkManager.swift; sourceTree = "<group>"; };
 		019E045F2CC4DFEB008753E9 /* RefreshTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenManager.swift; sourceTree = "<group>"; };
-		019E04652CC4E4DB008753E9 /* ListStudentPostQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentPostQuery.swift; sourceTree = "<group>"; };
 		019E04672CC4E537008753E9 /* ListStudentPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentPostModel.swift; sourceTree = "<group>"; };
 		01D112A52C7B5A31006B20BB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		01D112A82C7B5A93006B20BB /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
@@ -314,18 +312,9 @@
 			isa = PBXGroup;
 			children = (
 				019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */,
-				019E04412CB96B36008753E9 /* RequestDTO */,
 				019E04422CB96B3B008753E9 /* ResponseDTO */,
 			);
 			path = StudentPost;
-			sourceTree = "<group>";
-		};
-		019E04412CB96B36008753E9 /* RequestDTO */ = {
-			isa = PBXGroup;
-			children = (
-				019E04652CC4E4DB008753E9 /* ListStudentPostQuery.swift */,
-			);
-			path = RequestDTO;
 			sourceTree = "<group>";
 		};
 		019E04422CB96B3B008753E9 /* ResponseDTO */ = {
@@ -858,7 +847,6 @@
 				01DAB3222CAFE86D00E21D15 /* SignInModel.swift in Sources */,
 				01DAB2F42CAE950500E21D15 /* RoleCertifyView.swift in Sources */,
 				01D112A62C7B5A31006B20BB /* TabBarViewController.swift in Sources */,
-				019E04662CC4E4DC008753E9 /* ListStudentPostQuery.swift in Sources */,
 				01DAB2ED2CAD672700E21D15 /* FindQuestTableViewCell.swift in Sources */,
 				01DAB3002CAED3EA00E21D15 /* PasswordSettingView.swift in Sources */,
 				01DAB3172CAFE49000E21D15 /* TargetType.swift in Sources */,

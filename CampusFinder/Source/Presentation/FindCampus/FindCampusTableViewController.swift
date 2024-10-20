@@ -14,6 +14,7 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     var category: FinderCase
+    private var studentPosts: [ListStudentPostResponse] = []
     
     init(category: FinderCase) {
         self.category = category
@@ -31,6 +32,23 @@ final class FindCampusTableViewController: UITableViewController {
         tableView.register(FindQuestTableViewCell.self, forCellReuseIdentifier: "FindQuestTableViewCell")
         
         setupHeaderView()
+        loadData()
+    }
+    
+    private func loadData() {
+        // 여기서는 "DEV" 카테고리를 예시로 사용했습니다. 실제로는 선택된 카테고리에 따라 변경해야 합니다.
+        StudentPostNetworkManager.shared.listStudentPost(categoryType: "DEV") { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.studentPosts = response.data
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error fetching student posts: \(error)")
+                // 여기에 에러 처리 로직을 추가할 수 있습니다.
+            }
+        }
     }
     
     private func setupHeaderView() {
@@ -63,26 +81,32 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return category.dummyData.count
+        switch category {
+        case .student:
+            return max(studentPosts.count, 1) // 최소 1개의 셀을 보여줌 (데이터가 없을 때 "No Data" 셀)
+        case .request:
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = category.dummyData[indexPath.row]
-        
         switch category {
         case .student:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindStudentTableViewCell", for: indexPath) as? FindStudentTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: data)
+            
+            if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
+                let data = studentPosts[indexPath.row]
+                cell.configure(with: data)
+            } else {
+                cell.configure(with: ListStudentPostResponse(boardIdx: 0, title: "No Data", nickname: "", thumbnailImage: nil, isNearCampus: false, categoryType: ""))
+            }
             return cell
             
         case .request:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindQuestTableViewCell", for: indexPath) as? FindQuestTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: data)
-            return cell
+            // request case는 아직 구현하지 않으므로 기본 셀 반환
+            return UITableViewCell()
         }
     }
     
