@@ -40,7 +40,7 @@ final class RoleCertifyViewController: BaseViewController {
         
         print(role, univName, email)
         
-        NetworkManager.shared.emailSend(role: role, email: email, univName: univName){ [weak self] isSuccess in
+        OnboardingNetworkManager.shared.emailSend(role: role, email: email, univName: univName){ [weak self] isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
                     self?.showAlert(title: "전송 완료했습니다",
@@ -64,7 +64,7 @@ final class RoleCertifyViewController: BaseViewController {
         
         print(role, univName, email, code)
         
-        NetworkManager.shared.emailVerify(role: role, email: email, univName: univName, code: code){ [weak self] isSuccess in
+        OnboardingNetworkManager.shared.emailVerify(role: role, email: email, univName: univName, code: code){ [weak self] isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
                     SignupData.shared.email = email

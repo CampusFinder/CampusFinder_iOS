@@ -37,7 +37,7 @@ final class PasswordSettingViewController: BaseViewController {
             return
         }
         
-        NetworkManager.shared.passwordVerify(password: password) { [weak self] isSuccess, errorMessage in
+        OnboardingNetworkManager.shared.passwordVerify(password: password) { [weak self] isSuccess, errorMessage in
             DispatchQueue.main.async {
                 if isSuccess {
                     SignupData.shared.password = password
@@ -65,7 +65,7 @@ final class PasswordSettingViewController: BaseViewController {
         
         print(role, email, phoneNum, password, nickname, univName)
 
-        NetworkManager.shared.signup(role: role, email: email, phoneNum: phoneNum, password: password, nickname: nickname, univName: univName) { [weak self] isSuccess, errorMessage in
+        OnboardingNetworkManager.shared.signup(role: role, email: email, phoneNum: phoneNum, password: password, nickname: nickname, univName: univName) { [weak self] isSuccess, errorMessage in
             DispatchQueue.main.async {
                 if isSuccess {
                     let vc = WelcomeViewController()

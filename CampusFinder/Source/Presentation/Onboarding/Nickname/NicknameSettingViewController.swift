@@ -39,7 +39,7 @@ final class NicknameSettingViewController: BaseViewController {
             return
         }
         
-        NetworkManager.shared.nicknameVerify(nickname: nickname) { [weak self] isSuccess, errorMessage  in
+        OnboardingNetworkManager.shared.nicknameVerify(nickname: nickname) { [weak self] isSuccess, errorMessage  in
             DispatchQueue.main.async {
                 if isSuccess {
                     SignupData.shared.nickname = nickname
