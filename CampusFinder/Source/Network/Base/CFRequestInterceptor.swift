@@ -19,12 +19,13 @@ final class CFRequestInterceptor: RequestInterceptor {
         print("interceptor adapt 작동")
         let accessToken = TokenManager.shared.token
         var urlRequest = urlRequest
-        urlRequest.setValue(accessToken, forHTTPHeaderField: "Authorization")
+        urlRequest.headers.update(.authorization(bearerToken: accessToken))
         completion(.success(urlRequest))
     }
     
     func retry(_ request: Request, for session: Session, dueTo error: any Error, completion: @escaping (RetryResult) -> Void) {
-        guard let response = request.task?.response as? HTTPURLResponse, response.statusCode == 419 else {
+        guard let response = request.task?.response as? HTTPURLResponse,
+              response.statusCode == 401 || response.statusCode == 403 else {
             completion(.doNotRetryWithError(error))
             return
         }
@@ -51,6 +52,7 @@ final class CFRequestInterceptor: RequestInterceptor {
                 case .success(let data):
                     print("리프레쉬 토큰을 사용하여 토큰을 재발행하여 저장")
                     TokenManager.shared.token = data.accessToken
+                    print("새로운 액세스 토큰: \(data.accessToken)")
                     completion(true)
                 case .failure(let error):
                     print("리프레시 토큰 사용 실패: \(error)")
