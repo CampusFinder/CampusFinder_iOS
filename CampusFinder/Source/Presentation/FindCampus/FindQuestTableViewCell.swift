@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class FindQuestTableViewCell: BaseTableViewCell {
     
@@ -124,18 +125,13 @@ final class FindQuestTableViewCell: BaseTableViewCell {
         titleLabelWithCategoryTopConstraint?.activate()
     }
     
-    func configure(with data: DummyData) {
+    func configure(with data: ListRequestPostResponse) {
         titleLabel.text = data.title
         nicknameLabel.text = data.nickname
         
-        if let price = data.price {
-            priceLabel.text = price
-            priceLabel.isHidden = false
-        } else {
-            priceLabel.isHidden = true
-        }
+        priceLabel.text = "\(data.money)원"
         
-        if data.isNearSchool {
+        if data.isUrgent {
             categoryView.isHidden = false
             titleLabelWithoutCategoryTopConstraint?.deactivate()
             titleLabelWithCategoryTopConstraint?.activate()
@@ -143,6 +139,12 @@ final class FindQuestTableViewCell: BaseTableViewCell {
             categoryView.isHidden = true
             titleLabelWithCategoryTopConstraint?.deactivate()
             titleLabelWithoutCategoryTopConstraint?.activate()
+        }
+        
+        if let thumbnailURL = data.thumbnailImage, let url = URL(string: thumbnailURL) {
+            posterImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+        } else {
+            posterImageView.image = UIImage(systemName: "photo")
         }
     }
 }

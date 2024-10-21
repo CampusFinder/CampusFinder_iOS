@@ -18,6 +18,8 @@ enum Router {
     case nicknameVerify(query: NicknameVerifyQuery)
     case passwordVerify(query: PasswordVerifyQuery)
     case listStudentPost(categoryType: String)
+    case listRequestPost(categoryType: String)
+    case detailStudentPost(boardIdx: Int)
     case refresh
 }
 
@@ -44,6 +46,10 @@ extension Router: TargetType {
             return .get
         case .listStudentPost:
             return .get
+        case .listRequestPost:
+            return .get
+        case .detailStudentPost:
+            return .get
         }
     }
     
@@ -54,6 +60,8 @@ extension Router: TargetType {
     var queryItems: [URLQueryItem]? {
         switch self {
         case .listStudentPost(let categoryType):
+            return [URLQueryItem(name: "categoryType", value: categoryType)]
+        case .listRequestPost(let categoryType):
             return [URLQueryItem(name: "categoryType", value: categoryType)]
         default:
             return nil
@@ -116,7 +124,11 @@ extension Router: TargetType {
         case .refresh:
             return "/auth/refresh"
         case .listStudentPost:
-            return "/api/student-board/list"
+            return "/api/student-post/list"
+        case .listRequestPost:
+            return "/api/request-post/list"
+        case .detailStudentPost(let boardIdx):
+            return "/api/student-post/detail/\(boardIdx)"
         }
     }
     
@@ -159,6 +171,18 @@ extension Router: TargetType {
                 Header.authorization.rawValue: TokenManager.shared.token,
                 Header.contentType.rawValue: Header.json.rawValue,
                 Header.refresh.rawValue: TokenManager.shared.refreshToken
+            ]
+        case .listRequestPost:
+            return [
+                Header.authorization.rawValue: TokenManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: TokenManager.shared.refreshToken
+            ]
+        case .detailStudentPost:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue,
+//                Header.refresh.rawValue: TokenManager.shared.refreshToken
             ]
         case .refresh:
             return [

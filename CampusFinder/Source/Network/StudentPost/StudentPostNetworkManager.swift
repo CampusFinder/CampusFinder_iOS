@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import RxSwift
 
 final class StudentPostNetworkManager {
     
@@ -25,30 +24,20 @@ final class StudentPostNetworkManager {
             let request = try Router.listStudentPost(categoryType: categoryType).asURLRequest()
             
             session.request(request).responseDecodable(of: ListStudentPostModel.self) { response in
-                switch response.result {
-                case .success(let model):
-                    completion(.success(model))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                completion(response.result.mapError { $0 as Error })
             }
         } catch {
             completion(.failure(error))
         }
     }
     
-    // MARK: 의뢰찾기 글 조회
-    func listRequestPost(categoryType: String, completion: @escaping (Result<ListStudentPostModel, Error>) -> Void) {
+    // MARK: 학생찾기 글 상세 조회
+    func detailStudentPost(boardIdx: Int, completion: @escaping (Result<DetailStudentPostModel, Error>) -> Void) {
         do {
-            let request = try Router.listStudentPost(categoryType: categoryType).asURLRequest()
-            
-            session.request(request).responseDecodable(of: ListStudentPostModel.self) { response in
-                switch response.result {
-                case .success(let model):
-                    completion(.success(model))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+            let request = try Router.detailStudentPost(boardIdx: boardIdx).asURLRequest()
+
+            session.request(request).responseDecodable(of: DetailStudentPostModel.self) { response in
+                completion(response.result.mapError { $0 as Error })
             }
         } catch {
             completion(.failure(error))

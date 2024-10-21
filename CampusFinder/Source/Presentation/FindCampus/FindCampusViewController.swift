@@ -19,9 +19,20 @@ final class FindCampusViewController: BaseViewController {
     let tabManVC = TabmanViewController()
     let writingButton = CFButton.writingButton(title: "구인 글쓰기")
     
+    var categoryType: String
+    
     private lazy var viewControllers: [UIViewController] = {
-        return FinderCase.allCases.map { FindCampusTableViewController(category: $0) }
+        return FinderCase.allCases.map { FindCampusTableViewController(category: $0, categoryType: categoryType) }
     }()
+    
+    init(categoryType: String) {
+        self.categoryType = categoryType
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

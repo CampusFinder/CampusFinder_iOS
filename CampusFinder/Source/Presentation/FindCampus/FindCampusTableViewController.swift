@@ -14,11 +14,14 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     var category: FinderCase
+    var categoryType: String
     private var studentPosts: [ListStudentPostResponse] = []
+    private var requestPosts: [ListRequestPostResponse] = []
     
-    init(category: FinderCase) {
+    init(category: FinderCase, categoryType: String) {
         self.category = category
-        super.init(nibName: nil, bundle: nil)
+        self.categoryType = categoryType
+        super.init(style: .plain)
     }
     
     required init?(coder: NSCoder) {
@@ -36,17 +39,30 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     private func loadData() {
-        // 여기서는 "DEV" 카테고리를 예시로 사용했습니다. 실제로는 선택된 카테고리에 따라 변경해야 합니다.
-        StudentPostNetworkManager.shared.listStudentPost(categoryType: "DEV") { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.studentPosts = response.data
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+        switch category {
+        case .student:
+            StudentPostNetworkManager.shared.listStudentPost(categoryType: categoryType) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.studentPosts = response.data
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching student posts: \(error)")
                 }
-            case .failure(let error):
-                print("Error fetching student posts: \(error)")
-                // 여기에 에러 처리 로직을 추가할 수 있습니다.
+            }
+        case .request:
+            RequestPostNetworkManager.shared.listRequestPost(categoryType: categoryType) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.requestPosts = response.data
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching request posts: \(error)")
+                }
             }
         }
     }
@@ -83,9 +99,9 @@ final class FindCampusTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch category {
         case .student:
-            return max(studentPosts.count, 1) // 최소 1개의 셀을 보여줌 (데이터가 없을 때 "No Data" 셀)
+            return max(studentPosts.count, 1)
         case .request:
-            return 0
+            return max(requestPosts.count, 1)
         }
     }
     
@@ -105,8 +121,17 @@ final class FindCampusTableViewController: UITableViewController {
             return cell
             
         case .request:
-            // request case는 아직 구현하지 않으므로 기본 셀 반환
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindQuestTableViewCell", for: indexPath) as? FindQuestTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            if !requestPosts.isEmpty && indexPath.row < requestPosts.count {
+                let data = requestPosts[indexPath.row]
+                cell.configure(with: data)
+            } else {
+                cell.configure(with: ListRequestPostResponse(boardIdx: 0, title: "No Data", nickname: "", thumbnailImage: nil, isUrgent: false, money: 0, categoryType: ""))
+            }
+            return cell
         }
     }
     
@@ -120,7 +145,16 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailCampusViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
+            switch category {
+            case .student:
+                if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
+                    let selectedPost = studentPosts[indexPath.row]
+                    let detailVC = DetailPortfolioViewController(boardIdx: selectedPost.boardIdx)
+                    navigationController?.pushViewController(detailVC, animated: true)
+                }
+            case .request:
+                // 의뢰 게시글 상세 페이지로 이동하는 로직 (아직 구현되지 않음)
+                break
+            }
+        }
 }
