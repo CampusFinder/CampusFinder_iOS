@@ -45,8 +45,9 @@ final class FindStudentTableViewCell: BaseTableViewCell {
     
     let posterImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "star")
-        view.backgroundColor = .gray
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.gray.cgColor
         return view
     }()
     
@@ -109,9 +110,10 @@ final class FindStudentTableViewCell: BaseTableViewCell {
         }
         
         if let thumbnailURL = data.thumbnailImage, !thumbnailURL.isEmpty {
+            posterImageView.isHidden = false  // 썸네일 이미지가 있을 때는 이미지뷰를 보여줍니다
             posterImageView.kf.setImage(with: URL(string: thumbnailURL), placeholder: UIImage(systemName: "photo"))
         } else {
-            posterImageView.image = UIImage(systemName: "photo")
+            posterImageView.isHidden = true   // 썸네일 이미지가 없을 때는 이미지뷰를 숨깁니다
         }
     }
 }

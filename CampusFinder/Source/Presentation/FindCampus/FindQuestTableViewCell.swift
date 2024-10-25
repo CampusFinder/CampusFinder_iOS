@@ -141,10 +141,11 @@ final class FindQuestTableViewCell: BaseTableViewCell {
             titleLabelWithoutCategoryTopConstraint?.activate()
         }
         
-        if let thumbnailURL = data.thumbnailImage, let url = URL(string: thumbnailURL) {
-            posterImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+        if let thumbnailURL = data.thumbnailImage, !thumbnailURL.isEmpty {
+            posterImageView.isHidden = false  // 썸네일 이미지가 있을 때는 이미지뷰를 보여줍니다
+            posterImageView.kf.setImage(with: URL(string: thumbnailURL), placeholder: UIImage(systemName: "photo"))
         } else {
-            posterImageView.image = UIImage(systemName: "photo")
+            posterImageView.isHidden = true   // 썸네일 이미지가 없을 때는 이미지뷰를 숨깁니다
         }
     }
 }
