@@ -145,16 +145,19 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            switch category {
-            case .student:
-                if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
-                    let selectedPost = studentPosts[indexPath.row]
-                    let detailVC = DetailPortfolioViewController(boardIdx: selectedPost.boardIdx)
-                    navigationController?.pushViewController(detailVC, animated: true)
-                }
-            case .request:
-                // 의뢰 게시글 상세 페이지로 이동하는 로직 (아직 구현되지 않음)
-                break
+        switch category {
+        case .student:
+            if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
+                let selectedPost = studentPosts[indexPath.row]
+                let detailVC = DetailPortfolioViewController(boardIdx: selectedPost.boardIdx)
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        case .request:
+            if !requestPosts.isEmpty && indexPath.row < requestPosts.count {
+                let selectedPost = requestPosts[indexPath.row]
+                let detailVC = DetailRequestViewController(boardIdx: selectedPost.boardIdx)
+                navigationController?.pushViewController(detailVC, animated: true)
             }
         }
+    }
 }

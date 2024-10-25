@@ -33,6 +33,9 @@
 		012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C428F2C88B36200C78861 /* WriteRequestView.swift */; };
 		012C42C72C8AF9A400C78861 /* CFSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42C62C8AF9A400C78861 /* CFSelectView.swift */; };
 		012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */; };
+		0181E76E2CCB8B6800EC63D2 /* WritePortfolioRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181E76D2CCB8B6800EC63D2 /* WritePortfolioRequest.swift */; };
+		0181E7702CCBA11000EC63D2 /* WriteRequestPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181E76F2CCBA11000EC63D2 /* WriteRequestPostRequest.swift */; };
+		0181E7722CCBAE9200EC63D2 /* CFAddPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7712CCBAE9200EC63D2 /* CFAddPhotoCollectionViewCell.swift */; };
 		019E04402CB96B2E008753E9 /* StudentPostNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */; };
 		019E04602CC4DFEB008753E9 /* RefreshTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E045F2CC4DFEB008753E9 /* RefreshTokenManager.swift */; };
 		019E04682CC4E537008753E9 /* ListStudentPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E04672CC4E537008753E9 /* ListStudentPostModel.swift */; };
@@ -149,6 +152,9 @@
 		012C428F2C88B36200C78861 /* WriteRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestView.swift; sourceTree = "<group>"; };
 		012C42C62C8AF9A400C78861 /* CFSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSelectView.swift; sourceTree = "<group>"; };
 		012C42C92C8B1A8700C78861 /* WritePortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioView.swift; sourceTree = "<group>"; };
+		0181E76D2CCB8B6800EC63D2 /* WritePortfolioRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePortfolioRequest.swift; sourceTree = "<group>"; };
+		0181E76F2CCBA11000EC63D2 /* WriteRequestPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequestPostRequest.swift; sourceTree = "<group>"; };
+		0181E7712CCBAE9200EC63D2 /* CFAddPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPostNetworkManager.swift; sourceTree = "<group>"; };
 		019E045F2CC4DFEB008753E9 /* RefreshTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenManager.swift; sourceTree = "<group>"; };
 		019E04672CC4E537008753E9 /* ListStudentPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentPostModel.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 				0103B2412CA180D00031314F /* WriteRequestViewModel.swift */,
 				012C428F2C88B36200C78861 /* WriteRequestView.swift */,
 				0103B24C2CA7FBF30031314F /* DatePickerViewController.swift */,
+				0181E7712CCBAE9200EC63D2 /* CFAddPhotoCollectionViewCell.swift */,
 			);
 			path = WriteRequest;
 			sourceTree = "<group>";
@@ -326,6 +333,7 @@
 				019E043F2CB96B2E008753E9 /* StudentPostNetworkManager.swift */,
 				019E04672CC4E537008753E9 /* ListStudentPostModel.swift */,
 				019E04762CC54075008753E9 /* DetailStudentPostModel.swift */,
+				0181E76D2CCB8B6800EC63D2 /* WritePortfolioRequest.swift */,
 			);
 			path = StudentPost;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 				019E046A2CC4F7F1008753E9 /* RequestPostNetworkManager.swift */,
 				019E046C2CC4F82F008753E9 /* ListRequestPostModel.swift */,
 				019E046E2CC53C1E008753E9 /* DetailRequestPostModel.swift */,
+				0181E76F2CCBA11000EC63D2 /* WriteRequestPostRequest.swift */,
 			);
 			path = RequestPost;
 			sourceTree = "<group>";
@@ -846,6 +855,7 @@
 				0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */,
 				0103B25A2CAAC06B0031314F /* CategoryCase.swift in Sources */,
 				010A09302C8D6C4000B4AF6C /* WritePortfolioViewModel.swift in Sources */,
+				0181E7722CCBAE9200EC63D2 /* CFAddPhotoCollectionViewCell.swift in Sources */,
 				012C42CA2C8B1A8700C78861 /* WritePortfolioView.swift in Sources */,
 				01D113192C81EF4B006B20BB /* FinderCase.swift in Sources */,
 				019E046D2CC4F82F008753E9 /* ListRequestPostModel.swift in Sources */,
@@ -895,6 +905,7 @@
 				01DAB3352CB161E500E21D15 /* SMSVerifyModel.swift in Sources */,
 				01D1131E2C81F278006B20BB /* FindStudentTableViewCell.swift in Sources */,
 				01E408FF2C6899330006B86F /* PhoneNumberCertifyView.swift in Sources */,
+				0181E7702CCBA11000EC63D2 /* WriteRequestPostRequest.swift in Sources */,
 				01E4088B2C633D5A0006B86F /* LoginViewController.swift in Sources */,
 				01E408F42C68939B0006B86F /* SelectPositionViewController.swift in Sources */,
 				01DAB3042CAFDA0B00E21D15 /* SignupData.swift in Sources */,
@@ -912,6 +923,7 @@
 				01DAB2EF2CAE887E00E21D15 /* CFSelectRoleView.swift in Sources */,
 				01DAB3392CB16FC100E21D15 /* NicknameVerifyModel.swift in Sources */,
 				01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */,
+				0181E76E2CCB8B6800EC63D2 /* WritePortfolioRequest.swift in Sources */,
 				01DAB31E2CAFE7F000E21D15 /* SignUpQuery.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,

@@ -67,7 +67,7 @@ final class DetailPortfolioViewController: BaseViewController {
         case "FACE_TO_FACE":
             detailPortfolioView.questMethod.text = "대면"
         default:
-            detailPortfolioView.questMethod.text = "대면/비대면"
+            detailPortfolioView.questMethod.text = "상관없음"
         }
         
         detailPortfolioView.isNearCampus.text = data.isNearCampus ? "거주중 입니다." : "거주중이 아닙니다."
