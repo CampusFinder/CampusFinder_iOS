@@ -7,16 +7,17 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class FindStudentTableViewCell: BaseTableViewCell {
-
+    
     let categoryView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hexCode: "EAF9F2")
         view.layer.cornerRadius = 8
         return view
     }()
-
+    
     let categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "학교근처 거주"
@@ -25,33 +26,34 @@ final class FindStudentTableViewCell: BaseTableViewCell {
         label.textAlignment = .center
         return label
     }()
-
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendard(size: 18, weight: .semibold)
         label.textColor = CFColor.black01
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
-
+    
     let nicknameLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendard(size: 14, weight: .medium)
         label.textColor = CFColor.black04
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         return label
     }()
-
+    
     let posterImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "star")
-        view.backgroundColor = .gray
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.gray.cgColor
         return view
     }()
-
+    
     var titleLabelWithCategoryTopConstraint: Constraint?
     var titleLabelWithoutCategoryTopConstraint: Constraint?
-
+    
     override func configureHierarchy() {
         contentView.addSubview(categoryView)
         categoryView.addSubview(categoryLabel)
@@ -59,7 +61,7 @@ final class FindStudentTableViewCell: BaseTableViewCell {
         contentView.addSubview(nicknameLabel)
         contentView.addSubview(posterImageView)
     }
-
+    
     override func configureLayout() {
         categoryView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(16)
@@ -67,7 +69,7 @@ final class FindStudentTableViewCell: BaseTableViewCell {
             make.height.equalTo(20)
             make.width.greaterThanOrEqualTo(categoryLabel.snp.width).offset(20)
         }
-
+        
         categoryLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
@@ -78,12 +80,12 @@ final class FindStudentTableViewCell: BaseTableViewCell {
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalTo(posterImageView.snp.leading).offset(-16)
         }
-
+        
         nicknameLabel.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(18)
             make.leading.equalToSuperview().inset(16)
         }
-
+        
         posterImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(16)
@@ -92,12 +94,12 @@ final class FindStudentTableViewCell: BaseTableViewCell {
         titleLabelWithoutCategoryTopConstraint?.deactivate()
         titleLabelWithCategoryTopConstraint?.activate()
     }
-
-    func configure(with data: DummyData) {
+    
+    func configure(with data: ListStudentPostResponse) {
         titleLabel.text = data.title
         nicknameLabel.text = data.nickname
         
-        if data.isNearSchool {
+        if data.isNearCampus {
             categoryView.isHidden = false
             titleLabelWithoutCategoryTopConstraint?.deactivate()
             titleLabelWithCategoryTopConstraint?.activate()
@@ -105,6 +107,13 @@ final class FindStudentTableViewCell: BaseTableViewCell {
             categoryView.isHidden = true
             titleLabelWithCategoryTopConstraint?.deactivate()
             titleLabelWithoutCategoryTopConstraint?.activate()
+        }
+        
+        if let thumbnailURL = data.thumbnailImage, !thumbnailURL.isEmpty {
+            posterImageView.isHidden = false  // 썸네일 이미지가 있을 때는 이미지뷰를 보여줍니다
+            posterImageView.kf.setImage(with: URL(string: thumbnailURL), placeholder: UIImage(systemName: "photo"))
+        } else {
+            posterImageView.isHidden = true   // 썸네일 이미지가 없을 때는 이미지뷰를 숨깁니다
         }
     }
 }

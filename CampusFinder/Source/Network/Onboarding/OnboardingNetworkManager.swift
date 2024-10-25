@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  OnboardingNetworkManager.swift
 //  CampusFinder
 //
 //  Created by 강석호 on 10/4/24.
@@ -7,17 +7,12 @@
 
 import Foundation
 import Alamofire
-import RxSwift
 
-final class NetworkManager {
+final class OnboardingNetworkManager {
     
-    static let shared = NetworkManager()
+    static let shared = OnboardingNetworkManager()
     
-    private let session: Session
-    
-    private init() {
-        session = Session(interceptor: CFRequestInterceptor())
-    }
+    private init() { }
     
     // MARK: 로그인
     func login(phoneNumber: String, password: String, completion: @escaping (Bool) -> Void) {
@@ -238,32 +233,6 @@ final class NetworkManager {
         } catch {
             print("Request error: \(error)")
             completion(false, nil)
-        }
-    }
-    
-    
-    
-    // MARK: 토큰 재발급
-    func postRefreshToken() -> Observable<Result<RefreshModel, Error>> {
-        return Observable.create { observer in
-            do {
-                let request = try Router.refresh.asURLRequest()
-                self.session.request(request)
-                    .responseDecodable(of: RefreshModel.self) { response in
-                        switch response.result {
-                        case .success(let success):
-                            TokenManager.shared.token = success.accessToken
-                            observer.onNext(.success(success))
-                            observer.onCompleted()
-                        case .failure(let error):
-                            observer.onNext(.failure(error))
-                            observer.onCompleted()
-                        }
-                    }
-            } catch {
-                observer.onError(error)
-            }
-            return Disposables.create()
         }
     }
 }

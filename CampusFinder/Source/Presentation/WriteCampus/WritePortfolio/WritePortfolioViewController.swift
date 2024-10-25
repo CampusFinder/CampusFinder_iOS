@@ -38,6 +38,8 @@ final class WritePortfolioViewController: BaseViewController {
         
         writePortfolioView.residenceButton.addTarget(self, action: #selector(selectResidence), for: .touchUpInside)
         writePortfolioView.nonResidenceButton.addTarget(self, action: #selector(selectNonResidence), for: .touchUpInside)
+        
+        writePortfolioView.completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
     }
     
     private func bind() {
@@ -52,6 +54,16 @@ final class WritePortfolioViewController: BaseViewController {
         viewModel.nearSchoolDidChange = { [weak self] selectedNearSchool in
             self?.updateNearSchool(selectedNearSchool)
         }
+        
+        // 텍스트 필드와 텍스트뷰 바인딩 추가
+        writePortfolioView.titleTextField.addTarget(self, action: #selector(titleDidChange), for: .editingChanged)
+        
+        // 텍스트뷰 델리게이트 설정
+        writePortfolioView.questDetailTextView.delegate = self
+    }
+    
+    @objc private func titleDidChange() {
+        viewModel.title = writePortfolioView.titleTextField.text ?? ""
     }
     
     private func updateQuestMethod(_ selectedMethod: WritePortfolioViewModel.QuestMethod?) {
@@ -120,5 +132,48 @@ final class WritePortfolioViewController: BaseViewController {
     
     @objc private func selectNonResidence() {
         viewModel.selectNearSchool(.nonResidence)
+    }
+    
+    @objc private func completeButtonTapped() {
+        // 현재 텍스트뷰의 내용을 뷰모델에 저장
+        viewModel.content = writePortfolioView.questDetailTextView.text
+        
+        // 입력값 검증
+        let validation = viewModel.validateInputs()
+        if !validation.isValid {
+            // 에러 메시지 표시
+            let alert = UIAlertController(title: "알림", message: validation.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            present(alert, animated: true)
+            return
+        }
+        
+        // API 호출
+        viewModel.writePortfolio { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    // 성공 처리
+                    let alert = UIAlertController(title: "성공", message: "포트폴리오가 등록되었습니다.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default) { _ in
+                        self?.navigationController?.popViewController(animated: true)
+                    })
+                    self?.present(alert, animated: true)
+                    
+                case .failure(let error):
+                    // 실패 처리
+                    let alert = UIAlertController(title: "오류", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
+    }
+}
+
+extension WritePortfolioViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.content = textView.text
+        writePortfolioView.textViewDidChange(textView)
     }
 }

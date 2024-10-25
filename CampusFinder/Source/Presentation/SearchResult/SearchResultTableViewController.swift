@@ -75,8 +75,8 @@ final class SearchResultTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailCampusViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = DetailPortfolioViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
 }

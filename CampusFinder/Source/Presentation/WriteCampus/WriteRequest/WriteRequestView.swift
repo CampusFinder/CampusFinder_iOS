@@ -288,9 +288,9 @@ class WriteRequestView: BaseView, UITextViewDelegate {
         
         addPhotoView.snp.makeConstraints { make in
             make.top.equalTo(addPhotoLabel.snp.bottom).offset(10)
-            make.leading.equalTo(containerView).inset(16)
+            make.leading.trailing.equalTo(containerView).inset(16) // trailing 제약 추가
             make.bottom.equalTo(scrollView.snp.bottom).inset(100)
-            make.size.equalTo(80)
+            make.height.equalTo(80) // size 대신 height만 지정
         }
         
         completeView.snp.makeConstraints { make in

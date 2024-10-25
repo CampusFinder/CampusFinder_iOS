@@ -79,10 +79,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = FindCampusViewController()
-        print(itemLabels[indexPath.row])
-        vc.navigationItem.title = itemLabels[indexPath.row]
-        
+        let selectedCategory = itemLabels[indexPath.row]
+        let categoryType = convertToCategoryType(selectedCategory)
+        let vc = FindCampusViewController(categoryType: categoryType)
+        vc.navigationItem.title = selectedCategory
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -90,5 +90,24 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let totalSpacing = 30
         let width = (Int(collectionView.bounds.width) - totalSpacing) / 3
         return CGSize(width: width, height: width)
+    }
+    
+    private func convertToCategoryType(_ category: String) -> String {
+        switch category {
+        case "디자인":
+            return "DESIGN"
+        case "문서작성":
+            return "DOCS"
+        case "개발":
+            return "DEV"
+        case "영상":
+            return "VIDEO"
+        case "외국어":
+            return "LANGUAGE"
+        case "기타":
+            return "ETC"
+        default:
+            return "ETC"
+        }
     }
 }

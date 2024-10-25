@@ -10,3 +10,4 @@ import Foundation
 struct RefreshModel: Decodable {
     let accessToken: String
 }
+

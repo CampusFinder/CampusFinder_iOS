@@ -41,7 +41,7 @@ final class LoginViewController: BaseViewController {
             return
         }
         
-        NetworkManager.shared.login(phoneNumber: phoneNum, password: password) { [weak self] isSuccess in
+        OnboardingNetworkManager.shared.login(phoneNumber: phoneNum, password: password) { [weak self] isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
                     let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene

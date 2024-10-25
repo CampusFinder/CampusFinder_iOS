@@ -44,7 +44,7 @@ final class PhoneNumberCertifyViewController: BaseViewController {
             return
         }
         
-        NetworkManager.shared.smsSend(phoneNum: phoneNum, email: email) { [weak self] isSuccess in
+        OnboardingNetworkManager.shared.smsSend(phoneNum: phoneNum, email: email) { [weak self] isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
                     SignupData.shared.email = email
@@ -65,7 +65,7 @@ final class PhoneNumberCertifyViewController: BaseViewController {
             return
         }
         
-        NetworkManager.shared.smsVerify(phoneNum: phoneNum, code: code){ [weak self] isSuccess, errorMessage in
+        OnboardingNetworkManager.shared.smsVerify(phoneNum: phoneNum, code: code){ [weak self] isSuccess, errorMessage in
             DispatchQueue.main.async {
                 if isSuccess {
                     SignupData.shared.phoneNumber = phoneNum

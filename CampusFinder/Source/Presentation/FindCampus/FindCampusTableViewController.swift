@@ -14,10 +14,14 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     var category: FinderCase
+    var categoryType: String
+    private var studentPosts: [ListStudentPostResponse] = []
+    private var requestPosts: [ListRequestPostResponse] = []
     
-    init(category: FinderCase) {
+    init(category: FinderCase, categoryType: String) {
         self.category = category
-        super.init(nibName: nil, bundle: nil)
+        self.categoryType = categoryType
+        super.init(style: .plain)
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +35,36 @@ final class FindCampusTableViewController: UITableViewController {
         tableView.register(FindQuestTableViewCell.self, forCellReuseIdentifier: "FindQuestTableViewCell")
         
         setupHeaderView()
+        loadData()
+    }
+    
+    private func loadData() {
+        switch category {
+        case .student:
+            StudentPostNetworkManager.shared.listStudentPost(categoryType: categoryType) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.studentPosts = response.data
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching student posts: \(error)")
+                }
+            }
+        case .request:
+            RequestPostNetworkManager.shared.listRequestPost(categoryType: categoryType) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.requestPosts = response.data
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching request posts: \(error)")
+                }
+            }
+        }
     }
     
     private func setupHeaderView() {
@@ -63,25 +97,40 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return category.dummyData.count
+        switch category {
+        case .student:
+            return max(studentPosts.count, 1)
+        case .request:
+            return max(requestPosts.count, 1)
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = category.dummyData[indexPath.row]
-        
         switch category {
         case .student:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindStudentTableViewCell", for: indexPath) as? FindStudentTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: data)
+            
+            if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
+                let data = studentPosts[indexPath.row]
+                cell.configure(with: data)
+            } else {
+                cell.configure(with: ListStudentPostResponse(boardIdx: 0, title: "No Data", nickname: "", thumbnailImage: nil, isNearCampus: false, categoryType: ""))
+            }
             return cell
             
         case .request:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FindQuestTableViewCell", for: indexPath) as? FindQuestTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: data)
+            
+            if !requestPosts.isEmpty && indexPath.row < requestPosts.count {
+                let data = requestPosts[indexPath.row]
+                cell.configure(with: data)
+            } else {
+                cell.configure(with: ListRequestPostResponse(boardIdx: 0, title: "No Data", nickname: "", thumbnailImage: nil, isUrgent: false, money: 0, categoryType: ""))
+            }
             return cell
         }
     }
@@ -96,7 +145,19 @@ final class FindCampusTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailCampusViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        switch category {
+        case .student:
+            if !studentPosts.isEmpty && indexPath.row < studentPosts.count {
+                let selectedPost = studentPosts[indexPath.row]
+                let detailVC = DetailPortfolioViewController(boardIdx: selectedPost.boardIdx)
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        case .request:
+            if !requestPosts.isEmpty && indexPath.row < requestPosts.count {
+                let selectedPost = requestPosts[indexPath.row]
+                let detailVC = DetailRequestViewController(boardIdx: selectedPost.boardIdx)
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
     }
 }
