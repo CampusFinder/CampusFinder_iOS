@@ -28,6 +28,7 @@ class DetailPortfolioView: UIView {
     let thirdCrossLine = CFLine.lightGrayLine()
     let questDetailTitle = UILabel()
     let questDetail = UILabel()
+    let chattingView = UIView()
     let chattingButton = CFButton.primaryButton(title: "채팅하기")
     
     override init(frame: CGRect) {
@@ -59,7 +60,9 @@ class DetailPortfolioView: UIView {
         contentView.addSubview(thirdCrossLine)
         contentView.addSubview(questDetailTitle)
         contentView.addSubview(questDetail)
-        contentView.addSubview(chattingButton)
+        
+        addSubview(chattingView)
+        chattingView.addSubview(chattingButton)
         
         configureUI()
         configureConstraints()
@@ -112,6 +115,11 @@ class DetailPortfolioView: UIView {
         questDetail.font = .pretendard(size: 16, weight: .medium)
         questDetail.textColor = CFColor.black02
         questDetail.numberOfLines = 0
+        
+        chattingView.backgroundColor = .white
+        chattingView.clipsToBounds = true
+        chattingView.layer.cornerRadius = 10
+        chattingView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     private func configureConstraints() {
@@ -207,14 +215,21 @@ class DetailPortfolioView: UIView {
         questDetail.snp.makeConstraints { make in
             make.top.equalTo(questDetailTitle.snp.bottom).offset(6)
             make.horizontalEdges.equalToSuperview().inset(16)
+            make.bottom.equalTo(contentView.snp.bottom).inset(20)
+        }
+        
+        chattingView.snp.makeConstraints { make in
+            make.horizontalEdges.bottom.equalToSuperview()
+            make.height.equalTo(114)
         }
         
         chattingButton.snp.makeConstraints { make in
-            make.top.equalTo(questDetail.snp.bottom).offset(20)
-            make.bottom.equalTo(contentView).inset(45)
+            make.top.equalToSuperview().inset(16)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(53)
         }
+        
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 114, right: 0)
     }
     
     func updateLayoutBasedOnImageAvailability(_ hasImage: Bool) {
