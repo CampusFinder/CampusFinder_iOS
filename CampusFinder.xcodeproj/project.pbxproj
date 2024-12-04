@@ -12,7 +12,6 @@
 		0103B22D2CA019910031314F /* CFSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B22C2CA019910031314F /* CFSearchBar.swift */; };
 		0103B2352CA15BBF0031314F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2342CA15BBF0031314F /* SearchResultViewController.swift */; };
 		0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2362CA163510031314F /* RecentKeywordCell.swift */; };
-		0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B2382CA168530031314F /* UserDefaultsKey.swift */; };
 		0103B23B2CA1693E0031314F /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */; };
 		0103B23E2CA17B290031314F /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23D2CA17B290031314F /* SearchResultTableViewController.swift */; };
 		0103B2402CA17E770031314F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */; };
@@ -77,7 +76,6 @@
 		01DAB30F2CAFE14100E21D15 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB30E2CAFE14100E21D15 /* TokenManager.swift */; };
 		01DAB3112CAFE1B200E21D15 /* OnboardingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3102CAFE1B200E21D15 /* OnboardingNetworkManager.swift */; };
 		01DAB3132CAFE1F800E21D15 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3122CAFE1F800E21D15 /* Router.swift */; };
-		01DAB3152CAFE33600E21D15 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3142CAFE33600E21D15 /* APIUrl.swift */; };
 		01DAB3172CAFE49000E21D15 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB3162CAFE49000E21D15 /* TargetType.swift */; };
 		01DAB31C2CAFE7B400E21D15 /* SignInQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB31B2CAFE7B400E21D15 /* SignInQuery.swift */; };
 		01DAB31E2CAFE7F000E21D15 /* SignUpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAB31D2CAFE7F000E21D15 /* SignUpQuery.swift */; };
@@ -123,6 +121,8 @@
 		01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090B2C69F8BE0006B86F /* CFSearchView.swift */; };
 		01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */; };
 		01E409122C6A08950006B86F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409112C6A08950006B86F /* UIColor+.swift */; };
+		C4763AAC2CFC321300C34E91 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763AAB2CFC321300C34E91 /* APIUrl.swift */; };
+		C4763AAE2CFC323D00C34E91 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +131,6 @@
 		0103B22C2CA019910031314F /* CFSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSearchBar.swift; sourceTree = "<group>"; };
 		0103B2342CA15BBF0031314F /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		0103B2362CA163510031314F /* RecentKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordCell.swift; sourceTree = "<group>"; };
-		0103B2382CA168530031314F /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		0103B23D2CA17B290031314F /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		0103B23F2CA17E770031314F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,7 +202,6 @@
 		01DAB30E2CAFE14100E21D15 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		01DAB3102CAFE1B200E21D15 /* OnboardingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNetworkManager.swift; sourceTree = "<group>"; };
 		01DAB3122CAFE1F800E21D15 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		01DAB3142CAFE33600E21D15 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		01DAB3162CAFE49000E21D15 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		01DAB31B2CAFE7B400E21D15 /* SignInQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInQuery.swift; sourceTree = "<group>"; };
 		01DAB31D2CAFE7F000E21D15 /* SignUpQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpQuery.swift; sourceTree = "<group>"; };
@@ -247,6 +245,8 @@
 		01E4090B2C69F8BE0006B86F /* CFSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSearchView.swift; sourceTree = "<group>"; };
 		01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
 		01E409112C6A08950006B86F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		C4763AAB2CFC321300C34E91 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
+		C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -680,9 +680,9 @@
 				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
 				0103B22C2CA019910031314F /* CFSearchBar.swift */,
 				01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */,
-				0103B2382CA168530031314F /* UserDefaultsKey.swift */,
+				C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */,
 				0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */,
-				01DAB3142CAFE33600E21D15 /* APIUrl.swift */,
+				C4763AAB2CFC321300C34E91 /* APIUrl.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -844,7 +844,6 @@
 				01E408EE2C688B910006B86F /* TermsView.swift in Sources */,
 				019E04752CC53FE6008753E9 /* DetailRequestViewController.swift in Sources */,
 				0103B2292CA017660031314F /* SearchViewController.swift in Sources */,
-				01DAB3152CAFE33600E21D15 /* APIUrl.swift in Sources */,
 				01DAB32F2CB15CC800E21D15 /* SMSSendQuery.swift in Sources */,
 				01E409012C68DB980006B86F /* HomeViewController.swift in Sources */,
 				01D113232C820681006B20BB /* DetailPortfolioViewController.swift in Sources */,
@@ -876,7 +875,6 @@
 				012C428A2C88B24B00C78861 /* WritePortfolioViewController.swift in Sources */,
 				0103B2422CA180D00031314F /* WriteRequestViewModel.swift in Sources */,
 				01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */,
-				0103B2392CA168530031314F /* UserDefaultsKey.swift in Sources */,
 				0103B2372CA163510031314F /* RecentKeywordCell.swift in Sources */,
 				01DAB32D2CB13B3C00E21D15 /* EmailVerifyModel.swift in Sources */,
 				01DAB3332CB161B500E21D15 /* SMSVerifyQuery.swift in Sources */,
@@ -885,6 +883,7 @@
 				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
 				0103B25C2CAAC7ED0031314F /* ProfessorTableViewCell.swift in Sources */,
+				C4763AAC2CFC321300C34E91 /* APIUrl.swift in Sources */,
 				01DAB2F22CAE94EA00E21D15 /* RoleCertifyViewController.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01DAB3132CAFE1F800E21D15 /* Router.swift in Sources */,
@@ -924,6 +923,7 @@
 				01DAB3392CB16FC100E21D15 /* NicknameVerifyModel.swift in Sources */,
 				01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */,
 				0181E76E2CCB8B6800EC63D2 /* WritePortfolioRequest.swift in Sources */,
+				C4763AAE2CFC323D00C34E91 /* UserDefaultsKey.swift in Sources */,
 				01DAB31E2CAFE7F000E21D15 /* SignUpQuery.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
