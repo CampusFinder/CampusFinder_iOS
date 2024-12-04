@@ -121,8 +121,8 @@
 		01E4090C2C69F8BE0006B86F /* CFSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090B2C69F8BE0006B86F /* CFSearchView.swift */; };
 		01E4090F2C69FF960006B86F /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */; };
 		01E409122C6A08950006B86F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409112C6A08950006B86F /* UIColor+.swift */; };
-		C4763AAC2CFC321300C34E91 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763AAB2CFC321300C34E91 /* APIUrl.swift */; };
-		C4763AAE2CFC323D00C34E91 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */; };
+		EAD6E45F2D0090CE002F48D3 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E45E2D0090CE002F48D3 /* APIUrl.swift */; };
+		EAD6E4612D0090E9002F48D3 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E4602D0090E9002F48D3 /* UserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,8 +245,8 @@
 		01E4090B2C69F8BE0006B86F /* CFSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSearchView.swift; sourceTree = "<group>"; };
 		01E4090E2C69FF960006B86F /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
 		01E409112C6A08950006B86F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		C4763AAB2CFC321300C34E91 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
-		C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		EAD6E45E2D0090CE002F48D3 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
+		EAD6E4602D0090E9002F48D3 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -680,9 +680,9 @@
 				010A09692C8EFE1600B4AF6C /* CFPriceView.swift */,
 				0103B22C2CA019910031314F /* CFSearchBar.swift */,
 				01DAB2EE2CAE887E00E21D15 /* CFSelectRoleView.swift */,
-				C4763AAD2CFC323D00C34E91 /* UserDefaultsKey.swift */,
 				0103B23A2CA1693E0031314F /* UserDefaultsManager.swift */,
-				C4763AAB2CFC321300C34E91 /* APIUrl.swift */,
+				EAD6E45E2D0090CE002F48D3 /* APIUrl.swift */,
+				EAD6E4602D0090E9002F48D3 /* UserDefaultsKey.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -883,7 +883,7 @@
 				0103B22B2CA018290031314F /* SearchView.swift in Sources */,
 				012C42902C88B36200C78861 /* WriteRequestView.swift in Sources */,
 				0103B25C2CAAC7ED0031314F /* ProfessorTableViewCell.swift in Sources */,
-				C4763AAC2CFC321300C34E91 /* APIUrl.swift in Sources */,
+				EAD6E45F2D0090CE002F48D3 /* APIUrl.swift in Sources */,
 				01DAB2F22CAE94EA00E21D15 /* RoleCertifyViewController.swift in Sources */,
 				01E408EC2C68788B0006B86F /* TermsViewController.swift in Sources */,
 				01DAB3132CAFE1F800E21D15 /* Router.swift in Sources */,
@@ -923,7 +923,7 @@
 				01DAB3392CB16FC100E21D15 /* NicknameVerifyModel.swift in Sources */,
 				01DAB33B2CB179CE00E21D15 /* PasswordVerifyQuery.swift in Sources */,
 				0181E76E2CCB8B6800EC63D2 /* WritePortfolioRequest.swift in Sources */,
-				C4763AAE2CFC323D00C34E91 /* UserDefaultsKey.swift in Sources */,
+				EAD6E4612D0090E9002F48D3 /* UserDefaultsKey.swift in Sources */,
 				01DAB31E2CAFE7F000E21D15 /* SignUpQuery.swift in Sources */,
 				01D113162C81ECAB006B20BB /* FindCampusTableViewController.swift in Sources */,
 				01D1130C2C81DE24006B20BB /* ProfessorView.swift in Sources */,
