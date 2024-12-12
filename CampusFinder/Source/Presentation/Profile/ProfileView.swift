@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 final class ProfileView: BaseView {
-    private var userInfoView = UIView()
+    var userInfoView = UIView()
     private var profileImageView = UIImageView()
     private var userNameLabel = UILabel()
     
@@ -22,6 +22,7 @@ final class ProfileView: BaseView {
             $0.layer.cornerRadius = 12
             $0.layer.borderColor = UIColor.systemGray6.cgColor
             $0.layer.borderWidth = 1
+            $0.isUserInteractionEnabled = true
         }
         
         profileImageView.do {

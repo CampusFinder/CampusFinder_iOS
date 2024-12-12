@@ -25,11 +25,23 @@ final class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         title = "마이페이지"
         configureTableView()
+        configureGesture()
     }
     
     private func configureTableView() {
         profileView.profileMenuTableView.delegate = self
         profileView.profileMenuTableView.dataSource = self
+    }
+    
+    private func configureGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapUserInfoView))
+        profileView.userInfoView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func didTapUserInfoView() {
+        print("click")
+        let vc = StudentProfileDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
