@@ -24,6 +24,7 @@ enum Router {
     case writePortfolio(request: WritePortfolioRequest)
     case writeRequestPost(request: WriteRequestPostRequest)
     case refresh
+    case userInfo
 }
 
 extension Router: TargetType {
@@ -59,6 +60,8 @@ extension Router: TargetType {
             return .post
         case .writeRequestPost:
             return .post
+        case .userInfo:
+            return .get
         }
     }
     
@@ -144,6 +147,8 @@ extension Router: TargetType {
             return "/api/student-post"
         case .writeRequestPost:
             return "/api/request-post"
+        case .userInfo:
+            return "/api/users/info"
         }
     }
     
@@ -220,6 +225,11 @@ extension Router: TargetType {
             return [
                 Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
                 Header.contentType.rawValue: Header.multipart.rawValue
+            ]
+        case .userInfo:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue
             ]
         }
     }
