@@ -25,6 +25,11 @@ enum Router {
     case writeRequestPost(request: WriteRequestPostRequest)
     case refresh
     case userInfo
+    case studentMyPage
+    case professorMyPage
+    case updateProfileImage(imageData: Data)
+    case updateNickname(nickname: String)
+    case updateIntroduction(introduction: String)
 }
 
 extension Router: TargetType {
@@ -62,6 +67,16 @@ extension Router: TargetType {
             return .post
         case .userInfo:
             return .get
+        case .studentMyPage:
+            return .get
+        case .professorMyPage:
+            return .get
+        case .updateProfileImage:
+            return .put
+        case .updateNickname:
+            return .put
+        case .updateIntroduction:
+            return .put
         }
     }
     
@@ -106,6 +121,12 @@ extension Router: TargetType {
         case .passwordVerify(let query):
             let encoder = JSONEncoder()
             return try? encoder.encode(query)
+        case .updateNickname(let nickname):
+            let parameters = ["nickname": nickname]
+            return try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        case .updateIntroduction(let introduction):
+            let parameters = ["introduction": introduction]
+            return try? JSONSerialization.data(withJSONObject: parameters, options: [])
         default:
             return nil
         }
@@ -149,6 +170,16 @@ extension Router: TargetType {
             return "/api/request-post"
         case .userInfo:
             return "/api/users/info"
+        case .studentMyPage:
+            return "/api/mypage/student"
+        case .professorMyPage:
+            return "/api/mypage/professor"
+        case .updateProfileImage:
+            return "/api/mypage/student/profile-image"
+        case .updateNickname:
+            return "/api/mypage/student/nickname"
+        case .updateIntroduction:
+            return "/api/mypage/student/introduction"
         }
     }
     
@@ -227,6 +258,31 @@ extension Router: TargetType {
                 Header.contentType.rawValue: Header.multipart.rawValue
             ]
         case .userInfo:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue
+            ]
+        case .studentMyPage:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue
+            ]
+        case .professorMyPage:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue
+            ]
+        case .updateProfileImage:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.multipart.rawValue
+            ]
+        case .updateNickname:
+            return [
+                Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
+                Header.contentType.rawValue: Header.json.rawValue
+            ]
+        case .updateIntroduction:
             return [
                 Header.authorization.rawValue: "Bearer \(TokenManager.shared.token)",
                 Header.contentType.rawValue: Header.json.rawValue
@@ -333,11 +389,14 @@ extension Router: TargetType {
             
             return formData
             
+        case .updateProfileImage(let imageData):
+            let formData = MultipartFormData()
+            formData.append(imageData, withName: "file", fileName: "profile.jpg", mimeType: "image/jpeg")
+            return formData
             
         default:
             return nil
         }
-        
         
     }
 }

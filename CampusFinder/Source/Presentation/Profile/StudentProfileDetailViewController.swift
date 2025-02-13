@@ -24,13 +24,13 @@ final class StudentProfileDetailViewController: BaseViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigation()
-        configureView()
-        configureHierarchy()
-        configureConstraints()
+//        configureNavigation()
+//        configureView()
+//        configureHierarchy()
+//        configureConstraints()
+        fetchProfileData()
     }
     
     override func configureNavigation() {
@@ -57,7 +57,6 @@ final class StudentProfileDetailViewController: BaseViewController {
         }
         
         nicknameTextField.do {
-            $0.text = "Vicky"
             $0.backgroundColor = .white
             $0.font = .pretendard(size: 16, weight: .semibold)
             $0.layer.cornerRadius = 12
@@ -74,10 +73,6 @@ final class StudentProfileDetailViewController: BaseViewController {
         }
         
         introductionTextView.do {
-            $0.text = """
-            언제나 성실히 노력하는 씽씽입니다.
-            많은 의뢰 부탁드립니다.
-            """
             $0.backgroundColor = .white
             $0.font = .pretendard(size: 16, weight: .semibold)
             $0.layer.cornerRadius = 12
@@ -139,6 +134,26 @@ final class StudentProfileDetailViewController: BaseViewController {
         }
     }
     
+    private func fetchProfileData() {
+        ProfileNetworkManager.shared.fetchStudentProfile { [weak self] result in
+            switch result {
+            case .success(let profile):
+                print("학생 프로필:", profile)
+                DispatchQueue.main.async {
+                    if let imageUrl = profile.data.profileImageUrl, !imageUrl.isEmpty {
+                        self?.profileImageView.setImage(from: imageUrl)
+                    } else {
+                        self?.profileImageView.backgroundColor = .gray
+                    }
+                    self?.nicknameTextField.text = profile.data.nickname
+                    self?.introductionTextView.text = profile.data.introduction ?? "한 줄 소개를 입력해 주세요."
+                }
+            case .failure(let error):
+                print("학생 프로필 로드 실패:", error)
+            }
+        }
+    }
+    
     @objc func editButtonTapped() {
         isEditingProfile = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneButtonTapped))
@@ -147,6 +162,43 @@ final class StudentProfileDetailViewController: BaseViewController {
     @objc func doneButtonTapped() {
         isEditingProfile = false
         print("done")
+        
+        // 1. 닉네임 업데이트
+        if let nickname = nicknameTextField.text, !nickname.isEmpty {
+            ProfileNetworkManager.shared.updateStudentNickname(nickname: nickname) { result in
+                switch result {
+                case .success:
+                    print("닉네임 업데이트 성공")
+                case .failure(let error):
+                    print("닉네임 업데이트 실패:", error)
+                }
+            }
+        }
+        
+        // 2. 한 줄 소개 업데이트
+        if let introduction = introductionTextView.text, !introduction.isEmpty {
+            ProfileNetworkManager.shared.updateStudentIntroduction(introduction: introduction) { result in
+                switch result {
+                case .success:
+                    print("한 줄 소개 업데이트 성공")
+                case .failure(let error):
+                    print("한 줄 소개 업데이트 실패:", error)
+                }
+            }
+        }
+        
+        // 3. 이미지 업데이트
+        if let image = profileImageView.image, let imageData = image.jpegData(compressionQuality: 0.8) {
+            ProfileNetworkManager.shared.updateStudentProfileImage(imageData: imageData) { result in
+                switch result {
+                case .success:
+                    print("이미지 업데이트 성공")
+                case .failure(let error):
+                    print("이미지 업데이트 실패:", error)
+                }
+            }
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     

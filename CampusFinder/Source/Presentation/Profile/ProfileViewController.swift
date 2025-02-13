@@ -19,6 +19,11 @@ final class ProfileViewController: BaseViewController {
     
     override func loadView() {
         self.view = profileView
+        fetchProfileData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchProfileData()
     }
     
     override func viewDidLoad() {
@@ -39,9 +44,50 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc func didTapUserInfoView() {
-        print("click")
-        let vc = StudentProfileDetailViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let userRole = UserManager.shared.getUserInfo()?.role else { return }
+        
+        if userRole == "STUDENT" {
+            let studentVC = StudentProfileDetailViewController()
+            navigationController?.pushViewController(studentVC, animated: true)
+        } else if userRole == "PROFESSOR" {
+            let professorVC = ProfProfileDetailViewController()
+            navigationController?.pushViewController(professorVC, animated: true)
+        } else {
+            print("error")
+        }
+    }
+    
+    func fetchProfileData() {
+        guard let userRole = UserManager.shared.getUserInfo()?.role else { return }
+        
+        if userRole == "STUDENT" {
+            ProfileNetworkManager.shared.fetchStudentProfile { [weak self] result in
+                switch result {
+                case .success(let profile):
+                    print("학생 프로필:", profile)
+                    DispatchQueue.main.async {
+                        if let imageUrl = profile.data.profileImageUrl, !imageUrl.isEmpty {
+                            self?.profileView.profileImageView.setImage(from: imageUrl)
+                        } else {
+                            self?.profileView.profileImageView.backgroundColor = .gray
+                        }
+                        self?.profileView.userNameLabel.text = profile.data.nickname
+                    }
+                case .failure(let error):
+                    print("학생 프로필 로드 실패:", error)
+                }
+            }
+        } else if userRole == "PROFESSOR" {
+            ProfileNetworkManager.shared.fetchProfessorProfile { [weak self] result in
+                switch result {
+                case .success(let profile):
+                    print("교수 프로필:", profile)
+                case .failure(let error):
+                    print("교수 프로필 로드 실패:", error)
+                }
+                
+            }
+        }
     }
     
 }

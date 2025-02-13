@@ -11,8 +11,8 @@ import Then
 
 final class ProfileView: BaseView {
     var userInfoView = UIView()
-    private var profileImageView = UIImageView()
-    private var userNameLabel = UILabel()
+    var profileImageView = UIImageView()
+    var userNameLabel = UILabel()
     
     let profileMenuTableView = UITableView()
     
