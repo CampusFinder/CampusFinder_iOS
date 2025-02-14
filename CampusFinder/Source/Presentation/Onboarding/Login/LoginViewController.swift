@@ -44,16 +44,39 @@ final class LoginViewController: BaseViewController {
         OnboardingNetworkManager.shared.login(phoneNumber: phoneNum, password: password) { [weak self] isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
-                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
-                    let rootVC = TabBarController()
-                    sceneDelegate?.window?.rootViewController = rootVC
-                    sceneDelegate?.window?.makeKeyAndVisible()
+//                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+//                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+//                    let rootVC = TabBarController()
+//                    sceneDelegate?.window?.rootViewController = rootVC
+//                    sceneDelegate?.window?.makeKeyAndVisible()
+                    self?.fetchUserInfo()
                 } else {
                     self?.showAlert()
                 }
             }
         }
+    }
+    
+    private func fetchUserInfo() {
+        UserInfoNetworkManager.shared.userInfo { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let userInfoModel):
+                    UserManager.shared.saveUserInfo(userInfoModel.data)
+                    self?.navigateToHome()
+                case .failure(let error):
+                    self?.showAlert()
+                }
+            }
+        }
+    }
+    
+    private func navigateToHome() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let rootVC = TabBarController()
+        sceneDelegate?.window?.rootViewController = rootVC
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
     
     private func showAlert() {
